@@ -31,11 +31,7 @@
 
 
 ## MSIX -> AppSilo <a name="MSIX_AppSilo"></a>
-1. Select "Application Pacakge" on the far right
-
-   Browse to your .msix file and click the "Open package" button
-
-   You skip this step if you've come from the package creation flow
+1. Select "Application Pacakge" on the far right. Browse to your .msix file and click the "Open package" button. You skip this step if you've come from the package creation flow.
 
    ![image](https://user-images.githubusercontent.com/128075585/231865964-b1892885-52c2-4a8f-af4d-a95c6a655d3a.png)
 
