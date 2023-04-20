@@ -1,6 +1,10 @@
 # Table of Contents
 1. [Convert an existing win32 installer into an .msix app](#Win32)
-2. [Convert an existing .msix app to run in an AppSilo](#MSIX)
+2. [Convert an existing .msix app to run isolated](#MSIX)
+
+##Overview
+
+   This page will cover everything needed to package an existing MSIX or win32 application into Isolated Win32 App. This will be done through the [MSIX Packaging Tool](https://learn.microsoft.com/en-us/windows/msix/packaging-tool/tool-overview) 
 
 ## Win32 -> MSIX <a name="Win32"></a>
 
@@ -22,15 +26,17 @@
     ![image](https://user-images.githubusercontent.com/128075585/233454130-6215d5a1-41f1-4f15-8e6c-9ec5a9e61dfe.png)
 
 5. Go through the win32 installer as normal
+
 6. If there are additional entry points besides the main one, launch or browse to them. If the app has options for File Type Association in settings/config/preferences, toggle them at this step so MSIX will pick up on them
 
 7. Repeat the same process if there are services in the package
+
 8. Clicking Create will save the package as a full trust package. Click the "Package Editor" button to go to the "Package Editor" flow from the main menu
     
    ![image](https://user-images.githubusercontent.com/128075585/231869540-fa8c5078-8f7f-4d8c-94e5-ce6006bf74e3.png)
 
 
-## MSIX -> AppSilo <a name="MSIX"></a>
+## MSIX -> Isolated Win32 <a name="MSIX"></a>
 1. Select the far right option "Application Pacakge" and browse to the .msix file and click the "Open package" button.
 
    ![image](https://user-images.githubusercontent.com/128075585/231865964-b1892885-52c2-4a8f-af4d-a95c6a655d3a.png)
@@ -68,4 +74,4 @@
    * isolatedWin32-userProfileMinimal    
    * isolatedWin32-volumeRootMinimal 
 
-4. Select Create/Save
+4. Save and close the manifest window. If there are any errors in the manifest, MPT will display them. Select Create/Save to generate the .msix file.
