@@ -48,7 +48,7 @@
 
    Here the following changes will need to be made.
    
-   * Add `xmlns:previewsecurity2="http://schemas.microsoft.com/appx/manifest/preview/windows10/security/2"` to the <Package> element
+   * Add `xmlns:previewsecurity2="http://schemas.microsoft.com/appx/manifest/preview/windows10/security/2"` to the `<Package>` element
  
    * Add `previewsecurity2` to `IgnorableNamespaces` at the end of the `<Package>` element
   
@@ -56,7 +56,7 @@
   
    * In `<Application>` replace any existing entrypoint/trustlevel/runtimebehavior with `uap10:TrustLevel="appContainer" previewsecurity2:RuntimeBehavior="appSilo"`
 
-    ![image](https://user-images.githubusercontent.com/128075585/233455589-873581ea-dee5-4a4a-ba14-5cec527fc34d.png)
+    ![image](https://user-images.githubusercontent.com/128075585/234110554-7803c3e2-9957-4c3a-95f5-aba8c6888c70.png)
 
 3. The app might need additional capabilities to function correctly now that it has been isolated.
 
