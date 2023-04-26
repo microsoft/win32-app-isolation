@@ -20,7 +20,7 @@ listed below.
         * There is currently no support for dragging between different Isolated Win32 Apps
 
 2. Publisher Directory: If the application has the `isolatedWin32-accessToPublisherDirectory` 
-capability, then the app will have full access to directories with names ending with the publisher
+capability, then the app will have full access to directories or network shares with names ending with the publisher
 ID of the app located in `\Device\BootDevice\ProgramData`.
 
 3. Prompting: If the application has the `isolatedWin32-promptForAccess` capability, the first time
