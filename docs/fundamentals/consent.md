@@ -17,11 +17,15 @@ listed below.
 
     * Drag and Drop: Apps that register drag and drop handlers will have access to any files and
     folders dragged onto them.
-        * There is currently no support for dragging between different Isolated Win32 Apps
+        * There is currently no support for dragging between different Isolated Win32 Apps.
 
 2. Publisher Directory: If the application has the `isolatedWin32-accessToPublisherDirectory` 
-capability, then the app will have full access to network shares or directories with names ending with the publisher
-ID of the app located in `\Device\BootDevice\ProgramData`.
+capability, then the app will have full access to:
+
+    * Network shares whose share name ends with the publisher ID of the app.
+
+    * Directories with names ending with the publisher ID of the app located in
+    `\Device\BootDevice\ProgramData`.
 
 3. Prompting: If the application has the `isolatedWin32-promptForAccess` capability, the first time
 the app attempts to access a file or directory, a prompt will be generated for the user to accept
