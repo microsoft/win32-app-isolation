@@ -23,7 +23,7 @@ listed below.
 capability, then the app will have full access to directories with names ending with the publisher
 ID of the app located in `\Device\BootDevice\ProgramData`.
 
-3. Prompting: If the application has the isolatedWin32-promptForAccess capability, the first time
+3. Prompting: If the application has the `isolatedWin32-promptForAccess` capability, the first time
 the app attempts to access a file or directory, a prompt will be generated for the user to accept
 or decline. The choice will be saved until the consent is revoked
 
