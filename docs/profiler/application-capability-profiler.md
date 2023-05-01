@@ -6,7 +6,7 @@ Packaged applications may need to access resources outside of the sandbox. Examp
 
 Application Capability Profiler is a set of tools that help identify what capabilities may need to be declared by an application package, so it's granted the resource access it needs. Furthermore, it provides useful diagnostic information on failed access attempts by the application package.
 
-## Profiling step 0: make sure the target system is set up for profiling
+## Profiling step 0: set up the target system for profiling
 
 #### 1. Ensure administrator privilege to the target Windows system is held.
 
@@ -20,9 +20,10 @@ See [Installing PowerShell on Windows](https://learn.microsoft.com/en-us/powersh
 
 See [Windows Performance Recorder](https://learn.microsoft.com/en-us/windows-hardware/test/wpt/windows-performance-recorder) for instructions.
 
-    ```
-    Get-Command wpr
-    ```
+```PowerShell
+Get-Command wpr
+```
+
 ![image](https://github.com/microsoft/win32-app-isolation/blob/main/docs/profiler/images/acp-doc-get-command-wpr-output.png)
 
 #### 5. Download the Application Capability Profiler archive and extract it to a convenient path.
@@ -41,7 +42,7 @@ See [Windows Performance Recorder](https://learn.microsoft.com/en-us/windows-har
 
 2. Obtain the application package full name.
 
-    ```
+    ```PowerShell
     Get-AppxPackage | where-object {$_.name -like '*Test-AppSilo*'}
     ```
 
@@ -55,9 +56,9 @@ See [Windows Performance Analyzer](https://learn.microsoft.com/en-us/windows-har
 
 In administrator PowerShell 7:
 
-    ```
-    Import-Module Microsoft.Windows.Win32Isolation.ApplicationCapabilityProfiler.dll
-    ```
+```PowerShell
+Import-Module Microsoft.Windows.Win32Isolation.ApplicationCapabilityProfiler.dll
+```
 
 ## Profiling step 2: Start-Profiling
 
@@ -65,9 +66,9 @@ The Start-Profiling cmdlet takes the path to the target application package mani
 Start-Profiling will instrument the target application package for trace logging and enable a trace logging provider for access attempts made by the target application package.
 Start-Profiling requires administrator privileges and that Developer Mode be enabled.
 
-    ```
-    Start-Profiling -ManifestPath TestAppSilo-AppXManifest.xml
-    ```
+```PowerShell
+Start-Profiling -ManifestPath TestAppSilo-AppXManifest.xml
+```
 
 ![image](https://github.com/microsoft/win32-app-isolation/blob/main/docs/profiler/images/acp-doc-start-profiling-output.png)
 
@@ -81,9 +82,9 @@ The Stop-Profiling cmdlet stops an access attempt trace logging session that has
 Stop-Profiling takes an optional trace path parameter that controls the path used for the output Event Trace Log (.etl) file. &lt;current_directory&gt;\trace.etl by default.
 Stop-Profiling requires administrator privileges and that Developer Mode be enabled.
 
-    ```
-    Stop-Profiling
-    ```
+```PowerShell
+Stop-Profiling
+```
 
 ![image](https://github.com/microsoft/win32-app-isolation/blob/main/docs/profiler/images/acp-doc-stop-profiling-output.png)
 
@@ -94,13 +95,13 @@ The Get-ProfilingResults cmdlet parses the trace file obtained from the steps ab
 Get-ProfilingResults takes in the path to the trace file to parse. If none is provided, Get-ProfilingResults will attempt to Stop-Profiling to obtain a trace to parse.
 Get-ProfilingResults optionally takes a path to a target application manifest. If information in the parsed trace can be attributed to the target application package manifest, the file is edited directly with the output capabilities. Otherwise, a copy of the manifest is made for each of the packages identified in the trace and their identified capabilities.
 
-    ```
-    Get-ProfilingResults -EtlFilePaths trace.etl -ManifestPath TestAppSilo-AppXManifest.xml
-    ```
+```PowerShell
+Get-ProfilingResults -EtlFilePaths trace.etl -ManifestPath TestAppSilo-AppXManifest.xml
+```
 
 ![image](https://github.com/microsoft/win32-app-isolation/blob/main/docs/profiler/images/acp-doc-get-profilingresults-output.png)
 
-## Profiling step 5: repackaging
+## Profiling step 6: repackaging
 
 1. Include the newly identified capabilities in the target application package manifest (Get-ProfilingResults will edit the manifest directly if provided).
 2. Follow instructions in [msix-packaging-tool](https://github.com/microsoft/win32-app-isolation/blob/main/docs/packaging/msix-packaging-tool.md) to repackage the target application with the new capabilities, and reinstall it.
