@@ -100,8 +100,6 @@ Get-ProfilingResults optionally takes a path to a target application manifest. I
 
 ![image](https://github.com/microsoft/win32-app-isolation/blob/main/docs/profiler/images/acp-doc-get-profilingresults-output.png)
 
-    TestAppSilo-AppXManifest.xml will be edited to include the identified capabilities.
-
 ## Profiling step 5: repackaging
 
 1. Include the newly identified capabilities in the target application package manifest (Get-ProfilingResults will edit the manifest directly if provided).
