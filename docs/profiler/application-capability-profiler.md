@@ -23,8 +23,7 @@ See [Windows Performance Recorder](https://learn.microsoft.com/en-us/windows-har
     ```
     Get-Command wpr
     ```
-
-    ![image](https://github.com/microsoft/win32-app-isolation/blob/main/docs/profiler/images/acp-doc-get-command-wpr-output.png)
+![image](https://github.com/microsoft/win32-app-isolation/blob/main/docs/profiler/images/acp-doc-get-command-wpr-output.png)
 
 #### 5. Download the Application Capability Profiler archive and extract it to a convenient path.
 
@@ -70,7 +69,7 @@ Start-Profiling requires administrator privileges and that Developer Mode be ena
     Start-Profiling -ManifestPath TestAppSilo-AppXManifest.xml
     ```
 
-    ![image](https://github.com/microsoft/win32-app-isolation/blob/main/docs/profiler/images/acp-doc-start-profiling-output.png)
+![image](https://github.com/microsoft/win32-app-isolation/blob/main/docs/profiler/images/acp-doc-start-profiling-output.png)
 
 ## Profiling step 3: run the application scenarios
 
@@ -86,7 +85,7 @@ Stop-Profiling requires administrator privileges and that Developer Mode be enab
     Stop-Profiling
     ```
 
-    ![image](https://github.com/microsoft/win32-app-isolation/blob/main/docs/profiler/images/acp-doc-stop-profiling-output.png)
+![image](https://github.com/microsoft/win32-app-isolation/blob/main/docs/profiler/images/acp-doc-stop-profiling-output.png)
 
 ## Profiling step 5: Get-ProfilingResults
 
@@ -99,7 +98,7 @@ Get-ProfilingResults optionally takes a path to a target application manifest. I
     Get-ProfilingResults -EtlFilePaths trace.etl -ManifestPath TestAppSilo-AppXManifest.xml
     ```
 
-    ![image](https://github.com/microsoft/win32-app-isolation/blob/main/docs/profiler/images/acp-doc-get-profilingresults-output.png)
+![image](https://github.com/microsoft/win32-app-isolation/blob/main/docs/profiler/images/acp-doc-get-profilingresults-output.png)
 
     TestAppSilo-AppXManifest.xml will be edited to include the identified capabilities.
 
