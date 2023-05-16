@@ -85,3 +85,7 @@ to go to the "Package Editor" flow from the main menu
 
 4. Save and close the manifest window. If there are any errors in the manifest, MPT will display 
 them. Select Create/Save to generate the .msix file.
+
+5. See [application capability profiler](../profiler/application-capability-profiler.md) for 
+information on identifying capabilities that may need to be declared in the application package 
+manifest.
