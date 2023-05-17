@@ -32,7 +32,7 @@ The Get-ProfilingResults cmdlet parses one or more specified ETL (Event Tracing 
 Capability access information that can be matched to the application package manifest provided is automatically added to the manifest.
 
 ```powershell
-Get-ProfilingResults -EtlFilePaths C:\Logs\trace.etl -ManifestPath MyAppXManifest.xml
+Get-ProfilingResults -EtlFilePaths C:\Logs\trace.etl -ManifestPath C:\Path\To\MyAppXManifest.xml
 ```
 
 ### Example 2: Look for active trace logging session from Start-Profiling, collect trace and parse it.
@@ -40,7 +40,7 @@ Get-ProfilingResults -EtlFilePaths C:\Logs\trace.etl -ManifestPath MyAppXManifes
 If a trace logging session is currently active, Stop-Profiling will be called to attempt to collect a trace that can be parsed.
 
 ```powershell
-Get-ProfilingResults -ManifestPath MyAppXManifest.xml
+Get-ProfilingResults -ManifestPath C:\Path\To\MyAppXManifest.xml
 ```
 
 ### Example 3: Parse multiple traces
@@ -175,6 +175,22 @@ Aliases: s, SummaryPath, SummaryOutput
 Required: False
 Position: Named
 Default value: <working directory>\summary.txt
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Quiet
+
+Indicates that the cmdlet runs in quiet mode, suppressing unnecessary output and prompts.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
