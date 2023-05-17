@@ -73,7 +73,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### SignedFilePath
+### -SignedFilePath
 
 [Optional] Specifies the path to the authenticode sign file for application packages that are authenticode signed.
 
