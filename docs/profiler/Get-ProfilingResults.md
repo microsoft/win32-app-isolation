@@ -7,6 +7,7 @@ online version:
 schema: 2.0.0
 title: Get-ProfilingResults
 ---
+
 # Get-ProfilingResults
 
 ## SYNOPSIS
@@ -36,7 +37,7 @@ Get-ProfilingResults -EtlFilePaths C:\Logs\trace.etl -ManifestPath MyAppXManifes
 
 ### Example 2: Look for active trace logging session from Start-Profiling, collect trace and parse it.
 
-If an trace logging session is currently active, Stop-Profiling will be called to attempt to collect a trace that can be parsed.
+If a trace logging session is currently active, Stop-Profiling will be called to attempt to collect a trace that can be parsed.
 
 ```powershell
 Get-ProfilingResults -ManifestPath MyAppXManifest.xml
