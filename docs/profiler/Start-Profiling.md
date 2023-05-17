@@ -11,7 +11,7 @@ title: Start-Profiling
 # Start-Profiling
 
 ## SYNOPSIS
-Retrieves capability access information from input ETL files.
+Initiates access attempt profiling for a specified application package.
 
 ## SYNTAX
 
