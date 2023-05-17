@@ -1,9 +1,9 @@
 # Public Preview 
-## OS build <> 
+## Windows Insider Canary OS build 25357 (2023-05-04)
 ## Application Capability Profiler build <> 
-## MSIX Packaging Tool build <>
+## MSIX Packaging Tool build 1.2023.517.0 (2023-05-17)
 
-# OS build <> 
+# Windows Insider Canary OS build 25357 (2023-05-04)  
 This build adds support for the following capabilities for isolated applications
 1. Implicit brokering for the open file dialog.
 2. Printing.
