@@ -218,10 +218,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[Start-Profiling](../Start-Profiling.md)
+[Start-Profiling](Start-Profiling.md)
 
-[Stop-Profiling](../Stop-Profiling.md)
+[Stop-Profiling](Stop-Profiling.md)
 
-[Merge-ProfilingResults](../Merge-ProfilingResults.md)
+[Merge-ProfilingResults](Merge-ProfilingResults.md)
 
-[ApplicationCapabilityProfiler](../application-capability-profiler.md)
+[ApplicationCapabilityProfiler](application-capability-profiler.md)
