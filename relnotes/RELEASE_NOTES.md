@@ -15,6 +15,6 @@ This build adds support for the following capabilities for isolated applications
 
 # Coming soon 
 Windows Insider Canary builds in June 2023 will add support for the following capabilities for isolated applications
-1. File consent prompt reduction for legacy directory browsing, translating between shell display names and item identifiers, and isolated application launch though the context menu.
+1. File consent prompt reduction for legacy directory browsing, translating between shell display names and item identifiers, and isolated application launch through the context menu.
 2. Drag and drop into applications.
 3. Application multi-instancing with ShellExecute.
