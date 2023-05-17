@@ -5,13 +5,12 @@
 
 # Windows Insider Canary OS build 25357 (2023-05-04)  
 This build adds support for the following capabilities for isolated applications:
-1. Implicit brokering for the open file dialog.
+1. Implicit brokering for the open file dialog and other APIs.
 2. Printing.
 3. System tray icons.
 4. Shell notifications.
 5. File system privacy settings to reset file access permissions. 
-6. MSIX manifest extension support for FileType Association, COM servers, modern and classic context menus.
-7. Integration with Windows Privacy App Permissions pages.
+6. Integration with Windows Privacy App Permissions pages.
 
 # Application Capability Profiler v0.1.0 (2023-05-16)
 1. ApplicationCapabilityProfiler PowerShell 7 module to enable access attempt profiling via the following cmdlets:
@@ -21,6 +20,9 @@ This build adds support for the following capabilities for isolated applications
     * Merge-ProfilingResults: utility to merge the output of multiple runs of Get-ProfilingResults.
 2. ACP supports automatic inclusion of capabilities in target application package manifest.
 3. The file ACP-StackTrace.wpaProfile is provided to configure Windows Performance Analyzer (WPA) to display relevant stack information in the analysis view of the collected traces.
+
+# MSIX Packaging Tool v1.2023.517.0 (2023-05-17)
+Initial support to package MSIX applications to run isolated with broad support for extensions to support COM servers, file type associations, modern and classic context menus.
 
 # Coming soon 
 Windows Insider Canary builds in June 2023 will add support for the following capabilities for isolated applications:
