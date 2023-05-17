@@ -22,7 +22,7 @@ This build adds support for the following capabilities for isolated applications
 3. The file ACP-StackTrace.wpaProfile is provided to configure Windows Performance Analyzer (WPA) to display relevant stack information in the analysis view of the collected traces.
 
 # MSIX Packaging Tool v1.2023.517.0 (2023-05-17)
-Initial support to package MSIX applications to run isolated with broad support for extensions to support COM servers, file type associations, modern and classic context menus.
+Initial support to package MSIX applications to run isolated with broad support for extensions, such as to support COM servers, file type associations, modern and classic context menus.
 
 # Coming soon 
 Windows Insider Canary builds in June 2023 will add support for the following capabilities for isolated applications:
