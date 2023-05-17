@@ -15,14 +15,14 @@ Merges multiple Get-ProfilingResults output files into a single output file.
 
 ## SYNTAX
 
-### CmdletSet (XML)
+### XML Set
 
 ```
 Merge-ProfilingResults [-XmlInput] <string[]> [-OutputPath <string>] [-PackageNames <string[]>] [-Quiet]
 [-ShowFirstParty] [-ShowNoNameObjectFailures] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### CmdletSet (CSV)
+### CSV Set
 
 ```
 Merge-ProfilingResults [-CsvInput] <string[]> [-OutputPath <string>] [-PackageNames <string[]>] [-Quiet]
