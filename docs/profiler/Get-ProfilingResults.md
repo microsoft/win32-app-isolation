@@ -227,18 +227,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### CommonParameters
-
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
--InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](About/about_CommonParameters.md).
-
 ## RELATED LINKS
+
+[ApplicationCapabilityProfiler](application-capability-profiler.md)
 
 [Start-Profiling](Start-Profiling.md)
 
 [Stop-Profiling](Stop-Profiling.md)
 
 [Merge-ProfilingResults](Merge-ProfilingResults.md)
-
-[ApplicationCapabilityProfiler](application-capability-profiler.md)

@@ -5,45 +5,62 @@ Module Name: Microsoft.Windows.Win32Isolation.ApplicationCapabilityProfiler
 ms.date: 05/16/2023
 online version:
 schema: 2.0.0
-title: Start-Profiling
+title: Stop-Profiling
 ---
 
-# Start-Profiling
+# Stop-Profiling
 
 ## SYNOPSIS
-Initiates access attempt profiling for a specified application package.
+Stops access attempt profiling for a specified application package.
 
 ## SYNTAX
 
 ```
-Start-Profiling [[-ManifestPath] <string>] [-PackageFullName <string>] [-SignedFilePath <string>] [-Quiet]
-[-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
+Stop-Profiling [[-TracePath] <string>] [-PackageFullName <string>] [-ManifestPath <string>] [-Quiet] [-WhatIf]
+[-Confirm] [<CommonParameters>]
+
 
 ```
 
 ## DESCRIPTION
 
-The Start-Profiling cmdlet is used to start access attempt profiling for an application package. The cmdlet both starts an access attempt trace logging session and instruments the application package so it’s able to log to the session.
+The Stop-Profiling cmdlet is used to stop access attempt profiling for a specified application package. The cmdlet stops an active trace logging session started via [Start-Profiling](Start-Profiling.md), collects the resulting Event Trace Log (ETL) file and takes away access attempt trace logging instrumentation from all currently instrumented packages.
 
 ## EXAMPLES
 
-### Example 1: Start profiling for application package specified by manifest.
+### Example 1: Stop profiling and save results to the default trace path.
 
 ```powershell
-Start-Profiling -ManifestPath C:\Path\To\MyAppXManifest.xml
+Stop-Profiling
 ```
 
-### Example 2: Start profiling for application package specified by package full name.
+### Example 2: Stop profiling and save results to a specific trace path.
 
 ```powershell
-Start-Profiling -PackageFullName "Contoso.Application_1.0.0.0_neutral__8wekyb3d8bbwe"
+Stop-Profiling -TracePath "C:\Path\To\Trace.etl"
 ```
 
 ## PARAMETERS
 
+### -TracePath
+
+Specifies the path to which save the collected Event Trace Log.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: t, Trace
+
+Required: False
+Position: Named
+Default value: <working directory>\trace.etl
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ManifestPath
 
-Specifies the path to the manifest file of the application package to be profiled. The package full name will be inferred from the manifest. Supersedes -PackageFullName.
+Specifies the path to the manifest file of the application package from which to take away access attempt logging instrumentation. Supersedes -PackageFullName. Avoid using unless individual packages must have instrumentation taken away.
 
 ```yaml
 Type: System.String
@@ -59,7 +76,7 @@ Accept wildcard characters: False
 
 ### -PackageFullName 
 
-Superseded by -ManifestPath. Specifies the full name of the application package to be profiled. This can be obtained via [Get-AppxPackage](https://learn.microsoft.com/en-us/powershell/module/appx/get-appxpackage?view=windowsserver2022-ps). See [ApplicationCapabilityProfiler](application-capability-profiler.md) for details.
+Superseded by -ManifestPath. Specifies the full name of the application package from which to take away access attempt logging instrumentation. Avoid using unless individual packages must have instrumentation taken away. This can be obtained via [Get-AppxPackage](https://learn.microsoft.com/en-us/powershell/module/appx/get-appxpackage?view=windowsserver2022-ps). See [ApplicationCapabilityProfiler](application-capability-profiler.md) for details.
 
 ```yaml
 Type: System.String
@@ -92,22 +109,6 @@ Accept wildcard characters: False
 ### -Quiet
 
 Indicates that the cmdlet runs in quiet mode, suppressing unnecessary output and prompts.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Force
-
-Forces the cmdlet to proceed with profiling without displaying any confirmation prompts. Use this parameter with caution.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -157,7 +158,7 @@ Accept wildcard characters: False
 
 [ApplicationCapabilityProfiler](application-capability-profiler.md)
 
-[Stop-Profiling](Stop-Profiling.md)
+[Start-Profiling](Start-Profiling.md)
 
 [Get-ProfilingResults](Get-ProfilingResults.md)
 
