@@ -1,10 +1,10 @@
 # Public Preview 
-## Windows Insider Canary OS build 25357 (2023-05-04)
+## Windows Insider Canary Channel OS build 25357 (2023-05-04)
 ## Application Capability Profiler v0.1.0 (2023-05-16) 
 ## MSIX Packaging Tool v1.2023.517.0 (2023-05-17)
 
-# Windows Insider Canary OS build 25357 (2023-05-04)  
-This build adds support for the following capabilities for isolated applications:
+# Windows Insider Canary Channel OS build 25357 (2023-05-04)  
+This build contains the underlying infrastructure to install and run isolated applications and support for capabilities which include:
 1. Implicit brokering for the open file dialog and other APIs.
 2. Printing.
 3. System tray icons.
@@ -25,7 +25,7 @@ This build adds support for the following capabilities for isolated applications
 Initial support to package MSIX applications to run isolated with broad support for extensions, such as to support COM servers, file type associations, modern and classic context menus.
 
 # Coming soon 
-Windows Insider Canary builds in June 2023 will add support for the following capabilities for isolated applications:
+Windows Insider Canary builds after June 2023 will add support for capabilities for isolated applications which include:
 1. File consent prompt reduction for legacy directory browsing, translating between shell display names and item identifiers, and isolated application launch through the context menu.
 2. Drag and drop into applications.
 3. Application multi-instancing with ShellExecute.
