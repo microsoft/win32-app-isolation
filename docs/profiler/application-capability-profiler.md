@@ -80,7 +80,7 @@ In this step, it is important that all the critical application scenarios are ru
 
 The Stop-Profiling cmdlet stops an access attempt trace logging session that has been started and takes away the instrumentation for any application packages that had been instrumented for trace logging.
 Stop-Profiling takes an optional trace path parameter that controls the path used for the output Event Trace Log (.etl) file. &lt;current_directory&gt;\trace.etl by default.
-Stop-Profiling requires administrator privileges and that Developer Mode be enabled. [Stop-Profiling](Stop-Profiling.md)
+Stop-Profiling requires administrator privileges and that Developer Mode be enabled. See [Stop-Profiling](Stop-Profiling.md) for details.
 
 ```PowerShell
 Stop-Profiling
