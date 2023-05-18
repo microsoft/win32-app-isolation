@@ -5,7 +5,7 @@
 ## Overview
 
 This page will cover everything needed to package an existing MSIX or win32 application into
-Isolated Win32 App. This will be done through the [MSIX Packaging Tool](https://learn.microsoft.com/en-us/windows/msix/packaging-tool/tool-overview) 
+Isolated Win32 App. This will be done through the MSIX Packaging Tool (MPT). **Note** that the version of MPT that supports Win32 App Isolation is v1.2023.517.0, available in the release assets of this project. The [store version of MPT](https://learn.microsoft.com/en-us/windows/msix/packaging-tool/tool-overview) is **outdated** for the purposes of the Win32 App Isolation feature.
 
 ## Win32 -> MSIX <a name="Win32"></a>
 
@@ -37,7 +37,7 @@ MSIX will pick up on them
 
 8. Clicking Create will save the package as a full trust package. Click the "Package Editor" button
 to go to the "Package Editor" flow from the main menu
-    
+
     ![image](https://github.com/microsoft/win32-app-isolation/blob/main/docs/packaging/images/05-packaging-create-package.png)
 
 ## MSIX -> Isolated Win32 <a name="MSIX"></a>
@@ -51,15 +51,15 @@ to go to the "Package Editor" flow from the main menu
     ![image](https://github.com/microsoft/win32-app-isolation/blob/main/docs/packaging/images/10-packaging-package-editor.png)
 
     In the manifest, the following changes will need to be made.
-   
+
     * Add `xmlns:previewsecurity2="http://schemas.microsoft.com/appx/manifest/preview/windows10/security/2"`
     to the `<Package>` element
- 
+
     * Add `previewsecurity2` to `IgnorableNamespaces` at the end of the `<Package>` element
 
-    * In `<Dependencies>` change `TargetDeviceFamily` to 
+    * In `<Dependencies>` change `TargetDeviceFamily` to
     `<TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.22622.0" MaxVersionTested="10.0.22622.0" />`
-  
+
     * In `<Application>` replace any existing entrypoint/trustlevel/runtimebehavior with
     `uap10:TrustLevel="appContainer" previewsecurity2:RuntimeBehavior="appSilo"`
 
@@ -69,13 +69,13 @@ to go to the "Package Editor" flow from the main menu
 
     These capabilities directly add functionality back to isolated apps.
 
-    * `isolatedWin32-print` - Print documents 
+    * `isolatedWin32-print` - Print documents
     * `isolatedWin32-sysTrayIcon` - Display notifications from the Systray
     * `isolatedWin32-shellExtensionContextMenu` - Display COM-based context menu entries
     * `isolatedWin32-promptForAccess` - Prompt Users for file access
     * `isolatedWin32-accessToPublisherDirectory` - Access to directories that end with the publisher ID
 
-    These capabilities allow minimal access to libraries such as MSVC runtime or other Windows/3rd 
+    These capabilities allow minimal access to libraries such as MSVC runtime or other Windows/3rd
     Party DLLs for applications that don't support prompting.
 
     * `isolatedWin32-dotNetBreadcrumbStore`
@@ -83,9 +83,9 @@ to go to the "Package Editor" flow from the main menu
     * `isolatedWin32-userProfileMinimal`
     * `isolatedWin32-volumeRootMinimal`
 
-4. Save and close the manifest window. If there are any errors in the manifest, MPT will display 
+4. Save and close the manifest window. If there are any errors in the manifest, MPT will display
 them. Select Create/Save to generate the .msix file.
 
-5. See [application capability profiler](../profiler/application-capability-profiler.md) for 
-information on identifying capabilities that may need to be declared in the application package 
+5. See [application capability profiler](../profiler/application-capability-profiler.md) for
+information on identifying capabilities that may need to be declared in the application package
 manifest.
