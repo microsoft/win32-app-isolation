@@ -28,7 +28,7 @@ Get-Command wpr
 
 #### 5. Download the Application Capability Profiler archive and extract it to a convenient path.
 
-The Application Capability Profiler archive can be downloaded from the project's releases.
+The Application Capability Profiler archive can be downloaded from this project's release assets.
 
 #### 6. Follow the instructions on [msix-packaging-tool](../packaging/msix-packaging-tool.md) to package the application and install it on the target system.
 
