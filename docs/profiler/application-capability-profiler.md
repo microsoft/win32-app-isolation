@@ -2,7 +2,7 @@
 
 ## Overview
 
-Packaged applications may need to access resources outside of the sandbox. Examples of such resources include user files, pictures, registry items, camera, location, and microphone, among others. [Capability declaration](https://learn.microsoft.com/en-us/windows/uwp/packaging/app-capability-declarations) allows sandboxed applications to access some of those resources. Declarations are made in the sandboxed application's package manifest. See [msix-packaging-tool](https://github.com/microsoft/win32-app-isolation/blob/main/docs/packaging/msix-packaging-tool.md) for reference.
+Packaged applications may need to access resources outside of the sandbox. Examples of such resources include user files, pictures, registry items, camera, location, and microphone, among others. [Capability declaration](https://learn.microsoft.com/en-us/windows/uwp/packaging/app-capability-declarations) allows sandboxed applications to access some of those resources. Declarations are made in the sandboxed application's package manifest. See [msix-packaging-tool](../packaging/msix-packaging-tool.md) for reference.
 
 Application Capability Profiler is a set of tools that help identify what capabilities may need to be declared by an application package, so it's granted the resource access it needs. Furthermore, it provides useful diagnostic information on failed access attempts by the application package.
 
@@ -24,21 +24,21 @@ See [Windows Performance Recorder](https://learn.microsoft.com/en-us/windows-har
 Get-Command wpr
 ```
 
-![image](https://github.com/microsoft/win32-app-isolation/blob/main/docs/profiler/images/acp-doc-get-command-wpr-output.png)
+![image](images/acp-doc-get-command-wpr-output.png)
 
 #### 5. Download the Application Capability Profiler archive and extract it to a convenient path.
 
-[Download ACP]().
+The Application Capability Profiler archive can be downloaded from this project's release assets.
 
-#### 6. Follow the instructions on [msix-packaging-tool](https://github.com/microsoft/win32-app-isolation/blob/main/docs/packaging/msix-packaging-tool.md) to package the application and install it on the target system.
+#### 6. Follow the instructions on [msix-packaging-tool](../packaging/msix-packaging-tool.md) to package the application and install it on the target system.
 
 #### 7. Obtain the target application package manifest (recommended) and/or the target application package full name.
 
-1. **(Recommended)** Obtain the target application package manifest. The easiest way to do this is to open it using the [MSIX packaging tool](https://github.com/microsoft/win32-app-isolation/blob/main/docs/packaging/msix-packaging-tool.md) and save a copy of the manifest to a convenient path.
+1. **(Recommended)** Obtain the target application package manifest. The easiest way to do this is to open it using the [MSIX packaging tool](../packaging/msix-packaging-tool.md) and save a copy of the manifest to a convenient path.
 
-    ![image](https://github.com/microsoft/win32-app-isolation/blob/main/docs/profiler/images/acp-doc-manifest-open-via-mpt.png)
-    ![image](https://github.com/microsoft/win32-app-isolation/blob/main/docs/profiler/images/acp-doc-manifest-save-as.png)
-    ![image](https://github.com/microsoft/win32-app-isolation/blob/main/docs/profiler/images/acp-doc-manifest-newname-save-as.png)
+    ![image](images/acp-doc-manifest-open-via-mpt.png)
+    ![image](images/acp-doc-manifest-save-as.png)
+    ![image](images/acp-doc-manifest-newname-save-as.png)
 
 2. Obtain the application package full name.
 
@@ -46,7 +46,7 @@ Get-Command wpr
     Get-AppxPackage | where-object {$_.name -like '*Test-AppSilo*'}
     ```
 
-    ![image](https://github.com/microsoft/win32-app-isolation/blob/main/docs/profiler/images/acp-doc-get-appxpackage-output.png)
+    ![image](images/acp-doc-get-appxpackage-output.png)
 
 #### 8. **(Optional)** Install the Windows Performance Analyzer.
 
@@ -64,13 +64,13 @@ Import-Module Microsoft.Windows.Win32Isolation.ApplicationCapabilityProfiler.dll
 
 The Start-Profiling cmdlet takes the path to the target application package manifest or the full name of the application package.
 Start-Profiling will instrument the target application package for trace logging and enable a trace logging provider for access attempts made by the target application package.
-Start-Profiling requires administrator privileges and that Developer Mode be enabled.
+Start-Profiling requires administrator privileges and that Developer Mode be enabled. See [Start-Profiling](Start-Profiling.md) for details.
 
 ```PowerShell
 Start-Profiling -ManifestPath TestAppSilo-AppXManifest.xml
 ```
 
-![image](https://github.com/microsoft/win32-app-isolation/blob/main/docs/profiler/images/acp-doc-start-profiling-output.png)
+![image](images/acp-doc-start-profiling-output.png)
 
 ## Profiling step 3: run the application scenarios
 
@@ -80,13 +80,13 @@ In this step, it is important that all the critical application scenarios are ru
 
 The Stop-Profiling cmdlet stops an access attempt trace logging session that has been started and takes away the instrumentation for any application packages that had been instrumented for trace logging.
 Stop-Profiling takes an optional trace path parameter that controls the path used for the output Event Trace Log (.etl) file. &lt;current_directory&gt;\trace.etl by default.
-Stop-Profiling requires administrator privileges and that Developer Mode be enabled.
+Stop-Profiling requires administrator privileges and that Developer Mode be enabled. See [Stop-Profiling](Stop-Profiling.md) for details.
 
 ```PowerShell
 Stop-Profiling
 ```
 
-![image](https://github.com/microsoft/win32-app-isolation/blob/main/docs/profiler/images/acp-doc-stop-profiling-output.png)
+![image](images/acp-doc-stop-profiling-output.png)
 
 ## Profiling step 5: Get-ProfilingResults
 
@@ -95,20 +95,22 @@ The Get-ProfilingResults cmdlet parses the trace file obtained from the steps ab
 Get-ProfilingResults takes in the path to the trace file to parse. If none is provided, Get-ProfilingResults will attempt to Stop-Profiling to obtain a trace to parse.
 Get-ProfilingResults optionally takes a path to a target application manifest. If information in the parsed trace can be attributed to the target application package manifest, the file is edited directly with the output capabilities. Otherwise, a copy of the manifest is made for each of the packages identified in the trace and their identified capabilities.
 
+See [Get-ProfilingResults](Get-ProfilingResults.md) for details.
+
 ```PowerShell
 Get-ProfilingResults -EtlFilePaths trace.etl -ManifestPath TestAppSilo-AppXManifest.xml
 ```
 
-![image](https://github.com/microsoft/win32-app-isolation/blob/main/docs/profiler/images/acp-doc-get-profilingresults-output.png)
+![image](images/acp-doc-get-profilingresults-output.png)
 
 ## Profiling step 6: repackaging
 
 1. Include the newly identified capabilities in the target application package manifest (Get-ProfilingResults will edit the manifest directly if provided).
-2. Follow instructions in [msix-packaging-tool](https://github.com/microsoft/win32-app-isolation/blob/main/docs/packaging/msix-packaging-tool.md) to repackage the target application with the new capabilities, and reinstall it.
+2. Follow instructions in [msix-packaging-tool](../packaging/msix-packaging-tool.md) to repackage the target application with the new capabilities, and reinstall it.
 
 ## Helper cmdlets
 
-The Merge-ProfilingResults cmdlet can be used to merge the output from multiple runs of Get-ProfilingResults.
+The [Merge-ProfilingResults](Merge-ProfilingResults.md) cmdlet can be used to merge the output from multiple runs of Get-ProfilingResults.
 
 ## Interpreting Get-ProfilingResults output
 
@@ -144,12 +146,32 @@ To visualize access attempt stacks captured by Stop-Profiling in "trace.etl":
 1. Open trace.etl in WPA.
 2. Configure WPA Symbol paths to point to the application symbols and the Microsoft public symbol server.
 
-    ![image](https://github.com/microsoft/win32-app-isolation/blob/main/docs/profiler/images/acp-doc-wpa-configure-symbols.png)
+    ![image](images/acp-doc-wpa-configure-symbols.png)
 
 3. Load symbols.
 4. Apply the ACP-StackTrace.wpaProfile to bring up the access attempt stack visualization.
 
-    ![image](https://github.com/microsoft/win32-app-isolation/blob/main/docs/profiler/images/acp-doc-wpa-applyprofile.png)
-    ![image](https://github.com/microsoft/win32-app-isolation/blob/main/docs/profiler/images/acp-doc-wpa-stack-analysis.png)
+    ![image](images/acp-doc-wpa-applyprofile.png)
+    ![image](images/acp-doc-wpa-stack-analysis.png)
 
 See [Windows Performance Analyzer](https://learn.microsoft.com/en-us/windows-hardware/test/wpt/windows-performance-analyzer) for details.
+
+## RELATED LINKS
+
+[Start-Profiling](Start-Profiling.md)
+
+[Stop-Profiling](Stop-Profiling.md)
+
+[Get-ProfilingResults](Get-ProfilingResults.md)
+
+[Merge-ProfilingResults](Merge-ProfilingResults.md)
+
+[msix-packaging-tool](../packaging/msix-packaging-tool.md)
+
+[Capability declaration](https://learn.microsoft.com/en-us/windows/uwp/packaging/app-capability-declarations)
+
+[Windows Performance Recorder](https://learn.microsoft.com/en-us/windows-hardware/test/wpt/windows-performance-recorder)
+
+[Windows Performance Analyzer](https://learn.microsoft.com/en-us/windows-hardware/test/wpt/windows-performance-analyzer)
+
+[Installing PowerShell on Windows](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3)
