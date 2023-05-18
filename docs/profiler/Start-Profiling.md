@@ -23,7 +23,7 @@ Start-Profiling [[-ManifestPath] <string>] [-PackageFullName <string>] [-SignedF
 
 ## DESCRIPTION
 
-The Start-Profiling cmdlet is used to start access attempt profiling for an application package. The cmdlet both starts an access attempt trace logging session and instruments the application package so it’s able to log to the session.
+The Start-Profiling cmdlet is used to start access attempt profiling for an application package. The cmdlet both starts an access attempt trace logging session and instruments the application package so it’s able to log to the session. **Note** that Start-Profiling requires administrator privileges and that Developer Mode be enabled.
 
 ## EXAMPLES
 
@@ -155,7 +155,7 @@ Accept wildcard characters: False
 
 ## RELATED LINKS
 
-[ApplicationCapabilityProfiler](application-capability-profiler.md)
+[Application Capability Profiler](application-capability-profiler.md)
 
 [Stop-Profiling](Stop-Profiling.md)
 

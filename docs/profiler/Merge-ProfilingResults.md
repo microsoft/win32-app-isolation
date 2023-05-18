@@ -199,7 +199,7 @@ Accept wildcard characters: False
 
 ## RELATED LINKS
 
-[ApplicationCapabilityProfiler](application-capability-profiler.md)
+[Application Capability Profiler](application-capability-profiler.md)
 
 [Get-ProfilingResults](Get-ProfilingResults.md)
 

@@ -24,7 +24,7 @@ Stop-Profiling [[-TracePath] <string>] [-PackageFullName <string>] [-ManifestPat
 
 ## DESCRIPTION
 
-The Stop-Profiling cmdlet is used to stop access attempt profiling for a specified application package. The cmdlet stops an active trace logging session started via [Start-Profiling](Start-Profiling.md), collects the resulting Event Trace Log (ETL) file and takes away access attempt trace logging instrumentation from all currently instrumented packages.
+The Stop-Profiling cmdlet is used to stop access attempt profiling for a specified application package. The cmdlet stops an active trace logging session started via [Start-Profiling](Start-Profiling.md), collects the resulting Event Trace Log (ETL) file and takes away access attempt trace logging instrumentation from all currently instrumented packages. **Note** that Stop-Profiling requires administrator privileges and that Developer Mode be enabled.
 
 ## EXAMPLES
 
@@ -74,7 +74,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -PackageFullName 
+### -PackageFullName
 
 Superseded by -ManifestPath. Specifies the full name of the application package from which to take away access attempt logging instrumentation. Avoid using unless individual packages must have instrumentation taken away. This can be obtained via [Get-AppxPackage](https://learn.microsoft.com/en-us/powershell/module/appx/get-appxpackage?view=windowsserver2022-ps). See [ApplicationCapabilityProfiler](application-capability-profiler.md) for details.
 
@@ -156,7 +156,7 @@ Accept wildcard characters: False
 
 ## RELATED LINKS
 
-[ApplicationCapabilityProfiler](application-capability-profiler.md)
+[Application Capability Profiler](application-capability-profiler.md)
 
 [Start-Profiling](Start-Profiling.md)
 
