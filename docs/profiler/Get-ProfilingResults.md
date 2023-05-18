@@ -23,7 +23,8 @@ Get-ProfilingResults [[-EtlFilePaths] <string[]>] [-ExeNames <string[]>] [-Manif
 
 ## DESCRIPTION
 
-The Get-ProfilingResults cmdlet parses one or more specified ETL (Event Tracing for Windows) files to find access denied events for application packages and identify capabilities that would allow the package to perform those accesses. It also outputs relevant information about the access denied events found for the packages.
+The Get-ProfilingResults cmdlet parses one or more specified ETL (Event Tracing for Windows) files to find access denied events for application packages and identifies capabilities that would allow the package to perform those accesses. It also outputs relevant information about the access denied events found for the packages.
+
 
 ## EXAMPLES
 
