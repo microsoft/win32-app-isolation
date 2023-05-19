@@ -1,10 +1,10 @@
-# Application Capability Profiler (ACP)
+# Application capability profiler (ACP)
 
 ## Overview
 
 Packaged applications may need to access resources outside of the sandbox. Examples of such resources include user files, pictures, registry items, camera, location, and microphone, among others. [Capability declaration](https://learn.microsoft.com/en-us/windows/uwp/packaging/app-capability-declarations) allows sandboxed applications to access some of those resources. Declarations are made in the sandboxed application's package manifest. See [msix-packaging-tool](../packaging/msix-packaging-tool.md) for reference.
 
-Application Capability Profiler is a set of tools that help identify what capabilities may need to be declared by an application package, so it's granted the resource access it needs. Furthermore, it provides useful diagnostic information on failed access attempts by the application package.
+Application capability profiler is a set of tools that help identify what capabilities may need to be declared by an application package, so it's granted the resource access it needs. Furthermore, it provides useful diagnostic information on failed access attempts by the application package.
 
 ## Profiling step 0: set up the target system for profiling
 
@@ -15,6 +15,7 @@ Application Capability Profiler is a set of tools that help identify what capabi
 #### 3. Install PowerShell 7
 
 See [Installing PowerShell on Windows](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3) for instructions.
+This is required for [Microsoft.Windows.Win32Isolation.ApplicationCapabilityProfiler](reference/Microsoft.Windows.Win32Isolation.ApplicationCapabilityProfiler.md) module compatibility.
 
 #### 4. Install Windows Performance Recorder (WPR) if not already installed and add it to PATH.
 
@@ -26,9 +27,9 @@ Get-Command wpr
 
 ![image](images/acp-doc-get-command-wpr-output.png)
 
-#### 5. Download the Application Capability Profiler archive and extract it to a convenient path.
+#### 5. Download the application capability profiler archive and extract it to a convenient path.
 
-The Application Capability Profiler archive can be downloaded from this project's release assets.
+The application capability profiler archive can be downloaded from this project's [release assets](../../..//releases).
 
 #### 6. Follow the instructions on [msix-packaging-tool](../packaging/msix-packaging-tool.md) to package the application and install it on the target system.
 
@@ -54,6 +55,8 @@ See [Windows Performance Analyzer](https://learn.microsoft.com/en-us/windows-har
 
 ## Profiling step 1: import the PowerShell module
 
+Module: [Microsoft.Windows.Win32Isolation.ApplicationCapabilityProfiler](reference/Microsoft.Windows.Win32Isolation.ApplicationCapabilityProfiler.md)
+
 In administrator PowerShell 7:
 
 ```PowerShell
@@ -64,7 +67,7 @@ Import-Module Microsoft.Windows.Win32Isolation.ApplicationCapabilityProfiler.dll
 
 The Start-Profiling cmdlet takes the path to the target application package manifest or the full name of the application package.
 Start-Profiling will instrument the target application package for trace logging and enable a trace logging provider for access attempts made by the target application package.
-Start-Profiling requires administrator privileges and that Developer Mode be enabled. See [Start-Profiling](Start-Profiling.md) for details.
+Start-Profiling requires administrator privileges and that Developer Mode be enabled. See [Start-Profiling](reference/Start-Profiling.md) for details.
 
 ```PowerShell
 Start-Profiling -ManifestPath TestAppSilo-AppXManifest.xml
@@ -80,7 +83,7 @@ In this step, it is important that all the critical application scenarios are ru
 
 The Stop-Profiling cmdlet stops an access attempt trace logging session that has been started and takes away the instrumentation for any application packages that had been instrumented for trace logging.
 Stop-Profiling takes an optional trace path parameter that controls the path used for the output Event Trace Log (.etl) file. &lt;current_directory&gt;\trace.etl by default.
-Stop-Profiling requires administrator privileges and that Developer Mode be enabled. See [Stop-Profiling](Stop-Profiling.md) for details.
+Stop-Profiling requires administrator privileges and that Developer Mode be enabled. See [Stop-Profiling](reference/Stop-Profiling.md) for details.
 
 ```PowerShell
 Stop-Profiling
@@ -95,7 +98,7 @@ The Get-ProfilingResults cmdlet parses the trace file obtained from the steps ab
 Get-ProfilingResults takes in the path to the trace file to parse. If none is provided, Get-ProfilingResults will attempt to Stop-Profiling to obtain a trace to parse.
 Get-ProfilingResults optionally takes a path to a target application manifest. If information in the parsed trace can be attributed to the target application package manifest, the file is edited directly with the output capabilities. Otherwise, a copy of the manifest is made for each of the packages identified in the trace and their identified capabilities.
 
-See [Get-ProfilingResults](Get-ProfilingResults.md) for details.
+See [Get-ProfilingResults](reference/Get-ProfilingResults.md) for details.
 
 ```PowerShell
 Get-ProfilingResults -EtlFilePaths trace.etl -ManifestPath TestAppSilo-AppXManifest.xml
@@ -110,7 +113,7 @@ Get-ProfilingResults -EtlFilePaths trace.etl -ManifestPath TestAppSilo-AppXManif
 
 ## Helper cmdlets
 
-The [Merge-ProfilingResults](Merge-ProfilingResults.md) cmdlet can be used to merge the output from multiple runs of Get-ProfilingResults.
+The [Merge-ProfilingResults](reference/Merge-ProfilingResults.md) cmdlet can be used to merge the output from multiple runs of Get-ProfilingResults.
 
 ## Interpreting Get-ProfilingResults output
 
@@ -158,13 +161,15 @@ See [Windows Performance Analyzer](https://learn.microsoft.com/en-us/windows-har
 
 ## RELATED LINKS
 
-[Start-Profiling](Start-Profiling.md)
+[Microsoft.Windows.Win32Isolation.ApplicationCapabilityProfiler](reference/Microsoft.Windows.Win32Isolation.ApplicationCapabilityProfiler.md)
 
-[Stop-Profiling](Stop-Profiling.md)
+[Start-Profiling](reference/Start-Profiling.md)
 
-[Get-ProfilingResults](Get-ProfilingResults.md)
+[Stop-Profiling](reference/Stop-Profiling.md)
 
-[Merge-ProfilingResults](Merge-ProfilingResults.md)
+[Get-ProfilingResults](reference/Get-ProfilingResults.md)
+
+[Merge-ProfilingResults](reference/Merge-ProfilingResults.md)
 
 [msix-packaging-tool](../packaging/msix-packaging-tool.md)
 

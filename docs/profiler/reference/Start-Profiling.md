@@ -57,7 +57,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -PackageFullName 
+### -PackageFullName
 
 Superseded by -ManifestPath. Specifies the full name of the application package to be profiled. This can be obtained via [Get-AppxPackage](https://learn.microsoft.com/en-us/powershell/module/appx/get-appxpackage?view=windowsserver2022-ps). See [ApplicationCapabilityProfiler](application-capability-profiler.md) for details.
 
@@ -155,7 +155,7 @@ Accept wildcard characters: False
 
 ## RELATED LINKS
 
-[Application Capability Profiler](application-capability-profiler.md)
+[Application capability profiler](../application-capability-profiler.md)
 
 [Stop-Profiling](Stop-Profiling.md)
 

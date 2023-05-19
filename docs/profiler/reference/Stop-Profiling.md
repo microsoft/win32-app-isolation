@@ -156,7 +156,7 @@ Accept wildcard characters: False
 
 ## RELATED LINKS
 
-[Application Capability Profiler](application-capability-profiler.md)
+[Application capability profiler](../application-capability-profiler.md)
 
 [Start-Profiling](Start-Profiling.md)
 

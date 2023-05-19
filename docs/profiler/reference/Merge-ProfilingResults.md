@@ -44,7 +44,7 @@ Merge-ProfilingResults -XmlInput "C:\Path\To\AppXManifest1.xml", "C:\Path\To\App
 ### Example 2: Merge multiple AccessAttemptRecords.csv results into one.
 
 ```powershell
-Merge-ProfilingResults -CsvInput "C:\Path\To\AccessAttemptRecords1.csv", "C:\Path\To\AccessAttemptRecords2.csv" -OutputPath "C:\Path\To\MergedAccessAttemptRecords.csv" 
+Merge-ProfilingResults -CsvInput "C:\Path\To\AccessAttemptRecords1.csv", "C:\Path\To\AccessAttemptRecords2.csv" -OutputPath "C:\Path\To\MergedAccessAttemptRecords.csv"
 ```
 
 ## PARAMETERS
@@ -199,7 +199,7 @@ Accept wildcard characters: False
 
 ## RELATED LINKS
 
-[Application Capability Profiler](application-capability-profiler.md)
+[Application capability profiler](../application-capability-profiler.md)
 
 [Get-ProfilingResults](Get-ProfilingResults.md)
 
