@@ -5,7 +5,13 @@
 ## Overview
 
 This page will cover everything needed to package an existing MSIX or win32 application into
-Isolated Win32 App. This will be done through the MSIX Packaging Tool (MPT). **Note** that the version of MPT that supports Win32 App Isolation is v1.2023.517.0, available in the release assets of this project. The [store version of MPT](https://learn.microsoft.com/en-us/windows/msix/packaging-tool/tool-overview) is **outdated** for the purposes of the Win32 App Isolation feature. You can find additional documentation for MPT [here](https://learn.microsoft.com/en-us/windows/msix/packaging-tool/tool-overview).
+Isolated Win32 App. This will be done through the MSIX Packaging Tool (MPT). **Note** that the
+version of MPT that supports Win32 App Isolation is v1.2023.517.0, available in the release assets
+of this project. The [store version of MPT](https://learn.microsoft.com/en-us/windows/msix/packaging-tool/tool-overview) 
+is **outdated** for the purposes of the Win32 App Isolation feature. You can find additional 
+documentation for MPT [here](https://learn.microsoft.com/en-us/windows/msix/packaging-tool/tool-overview).
+
+You can find the download for MPT, as well as the profiler, in the [releases](https://github.com/microsoft/win32-app-isolation/releases) section of the github.
 
 <div id='Win32'/>
 
