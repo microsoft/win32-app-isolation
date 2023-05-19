@@ -1,12 +1,4 @@
----
-external help file: Microsoft.Windows.Win32Isolation.ApplicationCapabilityProfiler.dll-Help.xml
-Locale: en-US
-Module Name: Microsoft.Windows.Win32Isolation.ApplicationCapabilityProfiler
-ms.date: 05/16/2023
-online version:
-schema: 2.0.0
-title: Stop-Profiling
----
+Module Name: [Microsoft.Windows.Win32Isolation.ApplicationCapabilityProfiler](Microsoft.Windows.Win32Isolation.ApplicationCapabilityProfiler.md)
 
 # Stop-Profiling
 
@@ -156,7 +148,7 @@ Accept wildcard characters: False
 
 ## RELATED LINKS
 
-[Application Capability Profiler](application-capability-profiler.md)
+[Application capability profiler](../application-capability-profiler.md)
 
 [Start-Profiling](Start-Profiling.md)
 
