@@ -15,7 +15,7 @@ Release notes for supported Windows builds and tools can be found [here](relnote
 We'd love to hear your feedback and answer your questions! The best way to communicate with the team is through GitHub discussions and issues. Please search for similar discussions and issues before creating new ones. 
 
 ## Resources
-You can find additional information about Win32 application isolation using the following resources: 
+You can find additional information about Win32 app isolation using the following resources: 
 * [Coming soon - Win32 app isolation blog]()
 * [Coming soon - Win32 app isolation Build session]()
 
