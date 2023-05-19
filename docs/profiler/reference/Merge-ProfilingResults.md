@@ -1,12 +1,4 @@
----
-external help file: Microsoft.Windows.Win32Isolation.ApplicationCapabilityProfiler.dll-Help.xml
-Locale: en-US
-Module Name: Microsoft.Windows.Win32Isolation.ApplicationCapabilityProfiler
-ms.date: 05/16/2023
-online version:
-schema: 2.0.0
-title: Merge-ProfilingResults
----
+Module Name: [Microsoft.Windows.Win32Isolation.ApplicationCapabilityProfiler](Microsoft.Windows.Win32Isolation.ApplicationCapabilityProfiler.md)
 
 # Merge-ProfilingResults
 
