@@ -70,7 +70,8 @@ Start-Profiling will instrument the target application package for trace logging
 Start-Profiling requires administrator privileges and that Developer Mode be enabled. See [Start-Profiling](reference/Start-Profiling.md) for details.
 
 ```PowerShell
-Start-Profiling -ManifestPath TestAppSilo-AppXManifest.xml
+Start-Profiling -ManifestPath TestApp-AppXManifest.xml
+
 ```
 
 ![image](images/acp-doc-start-profiling-output.png)
