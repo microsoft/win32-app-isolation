@@ -102,7 +102,8 @@ Get-ProfilingResults optionally takes a path to a target application manifest. I
 See [Get-ProfilingResults](reference/Get-ProfilingResults.md) for details.
 
 ```PowerShell
-Get-ProfilingResults -EtlFilePaths trace.etl -ManifestPath TestAppSilo-AppXManifest.xml
+Get-ProfilingResults -EtlFilePaths trace.etl -ManifestPath TestApp-AppXManifest.xml
+
 ```
 
 ![image](images/acp-doc-get-profilingresults-output.png)
