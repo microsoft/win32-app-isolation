@@ -5,12 +5,15 @@
 ## Overview
 
 This page will cover everything needed to package an existing MSIX or win32 application into
-Isolated Win32 App. This will be done through the MSIX Packaging Tool (MPT). **Note** that the version of MPT that supports Win32 App Isolation is v1.2023.517.0, available in the release assets of this project. The [store version of MPT](https://learn.microsoft.com/en-us/windows/msix/packaging-tool/tool-overview) is **outdated** for the purposes of the Win32 App Isolation feature.
+Isolated Win32 App. This will be done through the MSIX Packaging Tool (MPT). **Note** that the version of MPT that supports Win32 App Isolation is v1.2023.517.0, available in the release assets of this project. The [store version of MPT](https://learn.microsoft.com/en-us/windows/msix/packaging-tool/tool-overview) is **outdated** for the purposes of the Win32 App Isolation feature. You can find additional documentation for MPT [here](https://learn.microsoft.com/en-us/windows/msix/packaging-tool/tool-overview).
 
-## Win32 -> MSIX <a name="Win32"></a>
+<div id='Win32'/>
 
-1. Select "Application Pacakge" on the far left and choose where the package will be created.
-This flow will follow the "Create package on this computer" option.
+## Win32 -> MSIX 
+
+1. Select "Application Package" on the far left and choose where the package will be created.
+This flow will follow the "Create package on this computer" option. **Note** This will result 
+in the app installed as a normal win32 after finishing step 5.
 
     ![image](https://github.com/microsoft/win32-app-isolation/blob/main/docs/packaging/images/01-packaging-main-menu.png)
 
@@ -23,7 +26,7 @@ blank as we will need to edit the manifest and sign it again.
 
     ![image](https://github.com/microsoft/win32-app-isolation/blob/main/docs/packaging/images/03-packaging-installer.png)
 
-4. Enter the package information. The publisher name must match the name on the certificate used to sign in later steps.
+4. Enter the package information.
 
     ![image](https://github.com/microsoft/win32-app-isolation/blob/main/docs/packaging/images/04-packaging-package-info.png)
 
@@ -36,11 +39,14 @@ MSIX will pick up on them
 7. Repeat the same process if there are services in the package
 
 8. Clicking Create will save the package as a full trust package. Click the "Package Editor" button
-to go to the "Package Editor" flow from the main menu
+to go to the "Package Editor" flow from the main menu. This can take up to several minutes depending
+on the size of the package.
 
     ![image](https://github.com/microsoft/win32-app-isolation/blob/main/docs/packaging/images/05-packaging-create-package.png)
 
-## MSIX -> Isolated Win32 <a name="MSIX"></a>
+<div id='MSIX'/>
+
+## MSIX -> Isolated Win32
 1. Select the far right option "Application Pacakge" and browse to the .msix file and click the
 "Open package" button.
 
@@ -84,7 +90,8 @@ to go to the "Package Editor" flow from the main menu
     * `isolatedWin32-volumeRootMinimal`
 
 4. Save and close the manifest window. If there are any errors in the manifest, MPT will display
-them. Select Create/Save to generate the .msix file.
+them. Select Create/Save to generate the .msix file. This can take serveral minutes depending on 
+the size of the package
 
 5. See [application capability profiler](../profiler/application-capability-profiler.md) for
 information on identifying capabilities that may need to be declared in the application package
