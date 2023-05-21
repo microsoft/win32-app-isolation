@@ -1,6 +1,8 @@
 # Welcome to the Win32 app isolation repo
-Win32 app isolation is a new security feature on Windows that helps contain the damage and safeguard user privacy choices in the event of an application compromise. 
-Win32 app isolation is built on the foundation of [AppContainers](https://learn.microsoft.com/en-us/windows/win32/secauthz/implementing-an-appcontainer), which offer a security boundary, and components that virtualize resources and provide brokered access to other resources. 
+Win32 app isolation is a new security feature on Windows that helps contain the damage and safeguard user privacy choices in the event of an 
+application compromise. 
+Win32 app isolation is built on the foundation of [AppContainers](https://learn.microsoft.com/en-us/windows/win32/secauthz/implementing-an-appcontainer), which offer a security boundary, 
+and components that virtualize resources and provide brokered access to other resources. 
 This repo contains the documentation and tools to help you isolate your applications.
 
 ## Getting started 
