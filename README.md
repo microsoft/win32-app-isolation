@@ -1,5 +1,7 @@
 # Welcome to the Win32 app isolation repo
-Win32 app isolation is a new security feature on Windows that helps contain the damage and safeguard user privacy choices in the event of an application compromise. Win32 app isolation is built on the foundation of [AppContainers](https://learn.microsoft.com/en-us/windows/win32/secauthz/implementing-an-appcontainer), which offer a security boundary, and components that virtualize resources and provide brokered access to other resources. This repo contains the documentation and tools to help you isolate your applications.
+Win32 app isolation is a new security feature on Windows that helps contain the damage and safeguard user privacy choices in the event of an application compromise. 
+Win32 app isolation is built on the foundation of [AppContainers](https://learn.microsoft.com/en-us/windows/win32/secauthz/implementing-an-appcontainer), which offer a security boundary, and components that virtualize resources and provide brokered access to other resources. 
+This repo contains the documentation and tools to help you isolate your applications.
 
 ## Getting started 
 * The first step to isolating your application is to package it to run isolated by following the instructions [here](docs/packaging/msix-packaging-tool.md). 
@@ -12,7 +14,9 @@ Binaries for the tools used to package applications to run isolated are shared u
 Release notes for supported Windows builds and tools can be found [here](relnotes/RELEASE_NOTES.md).
 
 ## Communicating with the team
-We'd love to hear your feedback and answer your questions! The best way to communicate with the team is through GitHub discussions and issues. Please search for similar discussions and issues before creating new ones. 
+We'd love to hear your feedback and answer your questions! 
+The best way to communicate with the team is through GitHub [discussions](../../discussions) and [issues](../../issues). 
+Please search for similar discussions and issues before creating new ones. 
 
 ## Resources
 You can find additional information about Win32 app isolation using the following resources: 
