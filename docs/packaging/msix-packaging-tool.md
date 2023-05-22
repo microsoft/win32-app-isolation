@@ -1,6 +1,6 @@
 # Table of Contents
-1. [Convert an existing win32 installer into an .msix app](#Win32)
-2. [Convert an existing .msix app to run isolated](#MSIX)
+1. [Convert an existing win32 installer into an .msix app](#Win32-->-msix)
+2. [Convert an existing .msix app to run isolated](#MSIX-->-Isolated-Win32)
 
 ## Overview
 
@@ -13,10 +13,7 @@ documentation for MPT [here](https://learn.microsoft.com/en-us/windows/msix/pack
 
 You can find the download for MPT, as well as the profiler, in the [releases](../../../releases) section of the github.
 
-
-<div id='Win32'/>
-
-## Win32 -> MSIX 
+## Win32 -> MSIX
 
 1. Select "Application Package" on the far left and choose where the package will be created.
 This flow will follow the "Create package on this computer" option. **Note** This will result 
@@ -51,9 +48,8 @@ on the size of the package.
 
     ![image](https://github.com/microsoft/win32-app-isolation/blob/main/docs/packaging/images/05-packaging-create-package.png)
 
-<div id='MSIX'/>
-
 ## MSIX -> Isolated Win32
+
 1. Select the far right option "Application Pacakge" and browse to the .msix file and click the
 "Open package" button.
 
