@@ -22,7 +22,7 @@ Please search for similar discussions and issues before creating new ones.
 
 ## Resources
 You can find additional information about Win32 app isolation using the following resources: 
-* [Coming soon - Win32 app isolation blog]
+* Coming soon - Win32 app isolation blog
 * [Coming soon - Win32 app isolation Build session]
 
 ## Contributing
