@@ -11,7 +11,7 @@ of this project. The [store version of MPT](https://learn.microsoft.com/en-us/wi
 is **outdated** for the purposes of the Win32 app isolation feature. You can find additional 
 documentation for MPT [here](https://learn.microsoft.com/en-us/windows/msix/packaging-tool/tool-overview).
 
-You can find the download for MPT, as well as the profiler, in the [releases](../../../releases) section of the github.
+You can find the download for MPT, as well as the profiler, in the [releases](../../../../releases) section of the github.
 
 ## Win32 -> MSIX
 
