@@ -1,0 +1,25 @@
+name: Bug Report
+description: File a bug report
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: textarea
+    label: Version
+    description: Tell us the enviroment and tool version when you had this bug
+    placeholder: |
+      Windows version:
+      Win32 app isolation release version:
+    validations:
+      required: true
+  - type: textarea
+    label: Repro Step
+    description: How did you get this bug?
+    placeholder: |
+      Please be as specific as possible so we can reproduce the issue
+    validations:
+      required: true
+  - type: textarea
+    label: Unexpected Results
+    description: Show us how the results were different than you expected, screenshots or logs might be helpful
+    validations:
+      required: true
