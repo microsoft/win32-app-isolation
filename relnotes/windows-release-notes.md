@@ -15,8 +15,8 @@ these applications which include:
 ## Coming soon 
 Windows releases on the Insider Canary Channel after June 2023 will add support for capabilities for isolated applications which include:
 1. File consent prompt reduction for
-* Legacy directory browsing
-* Translating between shell display names and item identifiers
-* Isolated application launch through the context menu.
+    * Legacy directory browsing
+    * Translating between shell display names and item identifiers
+    * Isolated application launch through the context menu.
 2. Drag and drop into applications.
 3. Application multi-instancing with ShellExecute.
