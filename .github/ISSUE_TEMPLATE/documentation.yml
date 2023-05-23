@@ -1,0 +1,17 @@
+name: Documentation
+description: Documentation related issues
+title: "[Docs]: "
+labels: ["documentation"]
+body:
+  - type: textarea
+    attributes:
+      label: Links
+      description: Provide related links to the docs if applicable
+    validations:
+      required: false
+  - type: textarea
+    attributes:
+      label: Description
+      description: What's the issue with the documentation?
+    validations:
+      required: true

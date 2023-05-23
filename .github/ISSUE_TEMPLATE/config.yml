@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Discussion
+    url: https://github.com/microsoft/win32-app-isolation/discussions
+    about: Feel free to talk about related topics in discussion

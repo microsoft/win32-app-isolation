@@ -1,0 +1,18 @@
+name: Feature Request
+description: Request a new feature or enhancement for existing features
+title: "[Feature]: "
+labels: ["feature-request"]
+body:
+  - type: textarea
+    attributes:
+      label: Summary
+      description: A summary of your request
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Pitch
+      description: Provide a detailed description for the feature/enhancement
+      placeholder: Let us know what you want and why you think this feature/enhancement is helpful
+    validations:
+      required: true

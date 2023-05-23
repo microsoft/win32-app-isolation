@@ -1,0 +1,11 @@
+name: Inquiry
+description: Questions about Win32 app isolation
+title: "[Inquiry]: "
+labels: ["inquiry"]
+body:
+  - type: textarea
+    attributes:
+      label: Description
+      description: What's your inquiry?
+    validations:
+      required: true
