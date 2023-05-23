@@ -3,9 +3,10 @@ name: Check Documentation
 on:
   push:
     branches:
-    - 'main'
+      - 'main'
   pull_request:
-    - 'main'
+    branches:
+      - 'main'
   schedule:
     # UTC 15:00 - PST 8:00
     - cron: '0 15 * * *'
