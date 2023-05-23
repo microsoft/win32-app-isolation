@@ -6,7 +6,7 @@ body:
   - type: textarea
     attributes:
       label: Version
-      description: Tell us the environment and tool version when you had this bug
+      description: Tell us the environment and tool version under which you came across the bug
       placeholder: |
         Windows version:
         Win32 app isolation release version:
@@ -23,6 +23,6 @@ body:
   - type: textarea
     attributes:
       label: Unexpected Results
-      description: Show us how the results were different than you expected, screenshots or logs might be helpful
+      description: Show us how the results were different than what you expected, screenshots or logs might be helpful
     validations:
       required: true
