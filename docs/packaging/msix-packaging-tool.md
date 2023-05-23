@@ -11,7 +11,7 @@ of this project. The [store version of MPT](https://learn.microsoft.com/en-us/wi
 is **outdated** for the purposes of the Win32 app isolation feature. You can find additional 
 documentation for MPT [here](https://learn.microsoft.com/en-us/windows/msix/packaging-tool/tool-overview).
 
-You can find the download for MPT, as well as the profiler, in the [releases](../../../../releases) section of the github.
+You can find the download for MPT, as well as the profiler, in the [releases](https://github.com/microsoft/win32-app-isolation/releases) section of the github.
 
 ## Win32 -> MSIX
 
@@ -19,7 +19,7 @@ You can find the download for MPT, as well as the profiler, in the [releases](..
 This flow will follow the "Create package on this computer" option. **Note** This will result 
 in the app installed as a normal win32 after finishing step 5.
 
-    ![image](https://github.com/microsoft/win32-app-isolation/blob/main/docs/packaging/images/01-packaging-main-menu.png)
+    ![image](images/01-packaging-main-menu.png)
 
 2. Wait for the "MSIX Packaging Tool Driver" field to finish checking
 

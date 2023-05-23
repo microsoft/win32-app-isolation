@@ -1,6 +1,6 @@
 # Windows Release Notes
 This file contains the summary of changes in Windows OS releases, available through the Insider Canary Channel, for Win32 app isolation.
-Release notes for the tools can be found in the [releases](../../../releases) section of the repo.
+Release notes for the tools can be found in the [releases](https://github.com/microsoft/win32-app-isolation/releases) section of the repo.
 
 ## Windows build 25357 (2023-05-04)
 This Windows release contains the underlying infrastructure to install and run isolated applications, and support for capabilities for

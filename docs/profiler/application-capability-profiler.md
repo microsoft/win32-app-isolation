@@ -29,7 +29,7 @@ Get-Command wpr
 
 #### 5. Download the application capability profiler archive and extract it to a convenient path.
 
-The application capability profiler archive can be downloaded from this project's [release assets](../../../..//releases).
+The application capability profiler archive can be downloaded from this project's [release assets](https://github.com/microsoft/win32-app-isolation/releases).
 
 #### 6. Follow the instructions on [msix-packaging-tool](../packaging/msix-packaging-tool.md) to package the application and install it on the target system.
 

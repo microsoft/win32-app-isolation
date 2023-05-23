@@ -68,7 +68,10 @@ Accept wildcard characters: False
 
 ### -PackageFullName
 
-Superseded by -ManifestPath. Specifies the full name of the application package from which to take away access attempt logging instrumentation. Avoid using unless individual packages must have instrumentation taken away. This can be obtained via [Get-AppxPackage](https://learn.microsoft.com/en-us/powershell/module/appx/get-appxpackage?view=windowsserver2022-ps). See [ApplicationCapabilityProfiler](application-capability-profiler.md) for details.
+Superseded by -ManifestPath. Specifies the full name of the application package from which to take away access attempt logging instrumentation.
+Avoid using unless individual packages must have instrumentation taken away.
+This can be obtained via [Get-AppxPackage](https://learn.microsoft.com/en-us/powershell/module/appx/get-appxpackage?view=windowsserver2022-ps).
+See [ApplicationCapabilityProfiler](../application-capability-profiler.md) for details.
 
 ```yaml
 Type: System.String
