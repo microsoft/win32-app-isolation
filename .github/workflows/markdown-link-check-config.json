@@ -1,5 +1,7 @@
 {
-    "ignorePatterns": [
-        "^https://aka.ms/.*"
-    ]
+  "ignorePatterns": [
+    {
+      "pattern": "^https://aka.ms/.*"
+    }
+  ]
 }
