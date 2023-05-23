@@ -1,0 +1,25 @@
+name: Check Documentation
+
+on:
+  push:
+    branches:
+    - 'main'
+  pull_request:
+    - 'main'
+  schedule:
+    # UTC 15:00 - PST 8:00
+    - cron: '0 15 * * *'
+
+jobs:
+  markdown-link-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Markdown link check
+        uses: gaurav-nelson/github-action-markdown-link-check@v1
+        with:
+          use-quiet-mode: 'no'
+          use-verbose-mode: 'yes'
+          check-modified-files-only: 'no'
+          config-file: '.github/workflows/markdown-link-check-config.json'
