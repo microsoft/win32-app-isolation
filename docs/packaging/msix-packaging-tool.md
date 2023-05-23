@@ -23,16 +23,16 @@ in the app installed as a normal win32 after finishing step 5.
 
 2. Wait for the "MSIX Packaging Tool Driver" field to finish checking
 
-    ![image](https://github.com/microsoft/win32-app-isolation/blob/main/docs/packaging/images/02-packaging-prepare.png)
+    ![image](images/02-packaging-prepare.png)
 
 3. Use the browse button to navigate to and select the win32 installer. Leave signing preference
 blank as we will need to edit the manifest and sign it again.
 
-    ![image](https://github.com/microsoft/win32-app-isolation/blob/main/docs/packaging/images/03-packaging-installer.png)
+    ![image](images/03-packaging-installer.png)
 
 4. Enter the package information.
 
-    ![image](https://github.com/microsoft/win32-app-isolation/blob/main/docs/packaging/images/04-packaging-package-info.png)
+    ![image](images/04-packaging-package-info.png)
 
 5. Go through the win32 installer as normal
 
@@ -46,18 +46,18 @@ MSIX will pick up on them
 to go to the "Package Editor" flow from the main menu. This can take up to several minutes depending
 on the size of the package.
 
-    ![image](https://github.com/microsoft/win32-app-isolation/blob/main/docs/packaging/images/05-packaging-create-package.png)
+    ![image](images/05-packaging-create-package.png)
 
 ## MSIX -> Isolated Win32
 
 1. Select the far right option "Application Pacakge" and browse to the .msix file and click the
 "Open package" button.
 
-    ![image](https://github.com/microsoft/win32-app-isolation/blob/main/docs/packaging/images/01-packaging-main-menu.png)
+    ![image](images/01-packaging-main-menu.png)
 
 2. Scroll down to the "Manifest file" section and click "Open file"
 
-    ![image](https://github.com/microsoft/win32-app-isolation/blob/main/docs/packaging/images/10-packaging-package-editor.png)
+    ![image](images/10-packaging-package-editor.png)
 
     In the manifest, the following changes will need to be made.
 
@@ -72,7 +72,7 @@ on the size of the package.
     * In `<Application>` replace any existing entrypoint/trustlevel/runtimebehavior with
     `uap10:TrustLevel="appContainer" previewsecurity2:RuntimeBehavior="appSilo"`
 
-    ![image](https://github.com/microsoft/win32-app-isolation/blob/main/docs/packaging/images/11-packaging-manifest.png)
+    ![image](images/11-packaging-manifest.png)
 
 3. The app might need additional capabilities to function correctly now that it has been isolated.
 
