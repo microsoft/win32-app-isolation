@@ -4,12 +4,14 @@ title: "[Docs]: "
 labels: ["documentation"]
 body:
   - type: textarea
-    label: Links
-    description: Provide related links to the docs if applicable
+    attributes:
+      label: Links
+      description: Provide related links to the docs if applicable
     validations:
       required: false
   - type: textarea
-    label: Description
-    description: What's the issue with the documentation?
+    attributes:
+      label: Description
+      description: What's the issue with the documentation?
     validations:
       required: true
