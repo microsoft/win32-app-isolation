@@ -11,13 +11,14 @@ This repo contains the documentation and tools to help you isolate your applicat
 * We also have additional documentation about the [fundamentals](docs/fundamentals) including file access consent.
 * You're now ready to deploy and run your application on Windows.
 
-Binaries for the tools used to package applications to run isolated are shared under the [releases](../../releases) section of the repo.
+Binaries for the tools used to package applications to run isolated are shared under the [releases](https://github.com/microsoft/win32-app-isolation/releases) section of the repo.
 
 Release notes for supported Windows builds and tools can be found [here](relnotes/windows-release-notes.md).
 
 ## Communicating with the team
 We'd love to hear your feedback and answer your questions! 
-The best way to communicate with the team is through GitHub [discussions](../../discussions) and [issues](../../issues). 
+The best way to communicate with the team is through GitHub [discussions](https://github.com/microsoft/win32-app-isolation/discussions)
+and [issues](https://github.com/microsoft/win32-app-isolation/issues). 
 Please search for similar discussions and issues before creating new ones. 
 
 ## Resources

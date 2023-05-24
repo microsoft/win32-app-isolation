@@ -51,7 +51,9 @@ Accept wildcard characters: False
 
 ### -PackageFullName
 
-Superseded by -ManifestPath. Specifies the full name of the application package to be profiled. This can be obtained via [Get-AppxPackage](https://learn.microsoft.com/en-us/powershell/module/appx/get-appxpackage?view=windowsserver2022-ps). See [ApplicationCapabilityProfiler](application-capability-profiler.md) for details.
+Superseded by -ManifestPath. Specifies the full name of the application package to be profiled.
+This can be obtained via [Get-AppxPackage](https://learn.microsoft.com/en-us/powershell/module/appx/get-appxpackage?view=windowsserver2022-ps).
+See [ApplicationCapabilityProfiler](../application-capability-profiler.md) for details.
 
 ```yaml
 Type: System.String
