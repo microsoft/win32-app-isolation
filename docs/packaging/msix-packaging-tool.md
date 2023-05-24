@@ -67,7 +67,7 @@ on the size of the package.
     * Add `previewsecurity2` to `IgnorableNamespaces` at the end of the `<Package>` element
 
     * In `<Dependencies>` change `TargetDeviceFamily` to
-    `<TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.22622.0" MaxVersionTested="10.0.22622.0" />`
+    `<TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.25229.0" MaxVersionTested="10.0.25229.0" />`
 
     * In `<Application>` replace any existing entrypoint/trustlevel/runtimebehavior with
     `uap10:TrustLevel="appContainer" previewsecurity2:RuntimeBehavior="appSilo"`
