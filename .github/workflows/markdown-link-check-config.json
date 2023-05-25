@@ -2,6 +2,9 @@
   "ignorePatterns": [
     {
       "pattern": "^https://aka.ms/.*"
+    },
+    {
+      "pattern": "^https://.*microsoft.com/.*"
     }
   ]
 }
