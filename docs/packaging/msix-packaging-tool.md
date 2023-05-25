@@ -50,7 +50,7 @@ on the size of the package.
 
 ## MSIX -> Isolated Win32
 
-1. Select the far right option "Application Pacakge" and browse to the .msix file and click the
+1. Select the far right option "Package editor" and browse to the .msix file and click the
 "Open package" button.
 
     ![image](images/01-packaging-main-menu.png)
