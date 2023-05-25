@@ -61,6 +61,8 @@ on the size of the package.
 
     In the manifest, the following changes will need to be made.
 
+    **Note**: Isolated win32 applications are not compatible with other application types within the same package.
+
     * Add `xmlns:previewsecurity2="http://schemas.microsoft.com/appx/manifest/preview/windows10/security/2"`
     to the `<Package>` element
 
@@ -71,6 +73,9 @@ on the size of the package.
 
     * In `<Application>` replace any existing entrypoint/trustlevel/runtimebehavior with
     `uap10:TrustLevel="appContainer" previewsecurity2:RuntimeBehavior="appSilo"`
+
+    * In `<Capabilities>` it is safe to remove the `<rescap:Capability name="runFullTrust">` unless
+    one of the extensions, such as `comServer`, requires it.
 
     ![image](images/11-packaging-manifest.png)
 
