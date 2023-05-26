@@ -76,7 +76,6 @@ on the size of the package.
 
     * **Note**: By default MPT, will automatically add `<rescap:Capability name="runFullTrust">` to
     `<Capabilities>` due to the app being a packaged Win32. This should be removed unless
-
     the app has other manifested extensions which can affect the user global state, such as
     `comServer` or `FirewallRules`, since those require the `runFullTrust` capability.
 
