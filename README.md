@@ -24,7 +24,7 @@ Please search for similar discussions and issues before creating new ones.
 ## Resources
 You can find additional information about Win32 app isolation using the following resources: 
 * [Win32 app isolation Build session](https://www.youtube.com/watch?v=w6VwHGPz12w&pp=ygUTd2luMzIgYXBwIGlzb2xhdGlvbg%3D%3D&ab_channel=MicrosoftDeveloper)
-* Coming soon - Win32 app isolation blog
+* [Win32 app isolation blog](https://blogs.windows.com/windowsdeveloper/2023/06/14/public-preview-improve-win32-app-security-via-app-isolation/)
 
 ## Contributing
 If you would like to contribute to the documentation, please familiarize yourself with the Code of Conduct resources below and submit a pull request.
