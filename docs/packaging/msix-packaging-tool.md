@@ -76,7 +76,7 @@ on the size of the package.
     * In `<Application>` replace any existing entrypoint/trustlevel/runtimebehavior with
     `uap10:TrustLevel="appContainer" previewsecurity2:RuntimeBehavior="appSilo"`
 
-        * **Note**: By default MPT, will automatically add `<rescap:Capability name="runFullTrust">` to
+        * **Note**: By default, MPT will automatically add `<rescap:Capability name="runFullTrust">` to
         `<Capabilities>` due to the app being a packaged Win32. This should be removed unless
         the app has other manifested extensions which can affect the user global state, such as
         `comServer` or `FirewallRules`, since those require the `runFullTrust` capability.
