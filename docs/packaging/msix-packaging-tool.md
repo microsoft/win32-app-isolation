@@ -69,12 +69,14 @@ on the size of the package.
     * Add `previewsecurity2` to `IgnorableNamespaces` at the end of the `<Package>` element
 
     * In `<Dependencies>` change `TargetDeviceFamily` to
-    `<TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.25229.0" MaxVersionTested="10.0.25229.0" />`
+    `<TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.25357.0" MaxVersionTested="10.0.25357.0" />`
+
+        * **Note**: Not all features are available in the minimun build, check out the [release notes](../../relnotes/windows-release-notes.md) for more detailed information.
 
     * In `<Application>` replace any existing entrypoint/trustlevel/runtimebehavior with
     `uap10:TrustLevel="appContainer" previewsecurity2:RuntimeBehavior="appSilo"`
 
-    * **Note**: By default MPT, will automatically add `<rescap:Capability name="runFullTrust">` to
+    * **Note**: By default, MPT will automatically add `<rescap:Capability name="runFullTrust">` to
     `<Capabilities>` due to the app being a packaged Win32. This should be removed unless
     the app has other manifested extensions which can affect the user global state, such as
     `comServer` or `FirewallRules`, since those require the `runFullTrust` capability.
