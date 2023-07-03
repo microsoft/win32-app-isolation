@@ -9,7 +9,7 @@ Retrieves capability access information from input ETL files.
 
 ```
 Get-ProfilingResults [[-EtlFilePaths] <string[]>] [-ExeNames <string[]>] [-ManifestPath <string>]
-[-RecordsOutputPath <string>] [-SummaryOutputPath <string>] [-PackageNames <string[]>] [-Quiet] [-ShowFirstParty]
+[-RecordsOutputPath <string>] [-SummaryOutputPath <string>] [-PackageNames <string[]>] [-Quiet]
 [-ShowNoNameObjectFailures] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -120,22 +120,6 @@ Aliases: r, RecordsOutput, RecordsPath
 Required: False
 Position: Named
 Default value: <working directory>\AccessAttemptRecords.csv
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ShowFirstParty
-
-Indicates whether to include first-party capabilities in the output. These may only be declared by Microsoft-signed packages.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

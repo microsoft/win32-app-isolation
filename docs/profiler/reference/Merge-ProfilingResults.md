@@ -11,14 +11,14 @@ Merges multiple Get-ProfilingResults output files into a single output file.
 
 ```
 Merge-ProfilingResults [-XmlInput] <string[]> [-OutputPath <string>] [-PackageNames <string[]>] [-Quiet]
-[-ShowFirstParty] [-ShowNoNameObjectFailures] [-WhatIf] [-Confirm] [<CommonParameters>]
+[-ShowNoNameObjectFailures] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### CSV Set
 
 ```
 Merge-ProfilingResults [-CsvInput] <string[]> [-OutputPath <string>] [-PackageNames <string[]>] [-Quiet]
-[-ShowFirstParty] [-ShowNoNameObjectFailures] [-WhatIf] [-Confirm] [<CommonParameters>]
+[-ShowNoNameObjectFailures] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -105,22 +105,6 @@ Aliases: p, Packages
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ShowFirstParty
-
-Indicates whether to include first-party capabilities in the output. These may only be declared by Microsoft-signed packages.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
