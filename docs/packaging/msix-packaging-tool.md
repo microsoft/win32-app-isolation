@@ -1,6 +1,6 @@
 # Table of Contents
-1. [Convert an existing win32 installer into an .msix app](#Win32-->-msix)
-2. [Convert an existing .msix app to run isolated](#MSIX-->-Isolated-Win32)
+1. [Convert an existing win32 installer into an .msix app](#win32---msix)
+2. [Convert an existing .msix app to run isolated](#msix---isolated-win32)
 
 ## Overview
 
