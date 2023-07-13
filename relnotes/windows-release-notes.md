@@ -10,7 +10,7 @@ Release notes for the tools can be found in the [releases](https://github.com/mi
 5. File system privacy settings to reset file access permissions. 
 6. Integration with Windows Privacy App Permissions pages.
 
-## Windows build 25905 (2023-07-23)
+## Windows build 25905 (2023-07-12)
 1. File consent prompt reduction for
     * Legacy directory browsing
     * Translating between shell display names and item identifiers
