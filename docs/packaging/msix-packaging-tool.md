@@ -64,9 +64,14 @@ on the size of the package.
     **Note**: Isolated win32 applications are not compatible with other application types within the same package.
 
     * Add `xmlns:previewsecurity2="http://schemas.microsoft.com/appx/manifest/preview/windows10/security/2"`
-    to the `<Package>` element
+    to the `<Package>` element if it's not there already
 
-    * Add `previewsecurity2` to `IgnorableNamespaces` at the end of the `<Package>` element
+        * Add `previewsecurity2` to `IgnorableNamespaces` at the end of the `<Package>` element
+
+    * Add `xmlns:uap10="http://schemas.microsoft.com/appx/manifest/uap/windows10/10"` to the `<Package>` element
+    if it's not there already.
+
+        * Add `uap10` to `IgnorableNamespaces` at the end of the `<Package>` element
 
     * In `<Dependencies>` change `TargetDeviceFamily` to
     `<TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.25357.0" MaxVersionTested="10.0.25357.0" />`
