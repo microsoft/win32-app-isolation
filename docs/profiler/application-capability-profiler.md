@@ -63,7 +63,7 @@ In administrator PowerShell 7:
 Import-Module .\Microsoft.Windows.Win32Isolation.ApplicationCapabilityProfiler.dll
 ```
 
-*Note:* the Microsoft.Windows.Win32Isolation.ApplicationCapabilityProfiler.dll module is located in the ACP folder extracted from the archive in step 0.5 above.
+*Note:* the Microsoft.Windows.Win32Isolation.ApplicationCapabilityProfiler.dll module is located in the ACP folder extracted from the archive in [step 0.5 above](#5-download-the-application-capability-profiler-archive-and-extract-it-to-a-convenient-path).
 
 ## Profiling step 2: Start-Profiling
 
