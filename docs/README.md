@@ -13,7 +13,7 @@
 
 ### Creating a Win32 App Isolation App:
 
-1. Create an MSIX package from Win32 installer *if the app is not already MSIX* ([step 1](/docs/packaging/msix-packaging-tool.md#win32---msix))
-2. Turn the MSIX Package to Win32 App Isolation ([step 2](/docs/packaging/msix-packaging-tool.md#msix---isolated-win32))
-3. Identify the required capabilities using [ACP](/docs/profiler/application-capability-profiler.md)
+1. Create an MSIX package from Win32 installer *if the app is not already MSIX* ([step 1](packaging/msix-packaging-tool.md#win32---msix))
+2. Turn the MSIX Package to Win32 App Isolation ([step 2](packaging/msix-packaging-tool.md#msix---isolated-win32))
+3. Identify the required capabilities using [ACP](profiler/application-capability-profiler.md)
 4. Repackage the app with the capabilities just found
