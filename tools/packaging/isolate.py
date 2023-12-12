@@ -2,6 +2,7 @@ import argparse
 import os
 import platform
 import re
+import shutil
 import subprocess
 import tempfile
 from dataclasses import dataclass
@@ -100,16 +101,16 @@ def unpack(config: IsolateConfig):
     os.makedirs(config.working_dir, exist_ok=True)
 
     # Extract the package
-    subprocess.check_call(f"{config.makeappx} unpack /p {config.msix} /d {os.path.join(config.working_dir, 'unpack')}", shell=True)
+    subprocess.check_call([config.makeappx, "unpack", "/p", config.msix, "/d", os.path.join(config.working_dir, "unpack")], shell=True)
 
 
 def pack_and_sign(config: IsolateConfig):
     print("Repacking...")
     # Repack the package
-    subprocess.check_call(f"{config.makeappx} pack /nv /d {os.path.join(config.working_dir, 'unpack')} /p {config.output}", shell=True)
+    subprocess.check_call([config.makeappx, "pack", "/nv", "/d", os.path.join(config.working_dir, 'unpack'), "/p" ,config.output], shell=True)
 
     # Sign the package
-    subprocess.check_call(f"{config.signtool} sign /fd SHA256 /f {config.cert} {config.output}", shell=True)
+    subprocess.check_call([config.signtool, "sign", "/fd", "SHA256", "/f", config.cert, config.output], shell=True)
 
 
 def modify_manifest(config: IsolateConfig):
@@ -118,24 +119,43 @@ def modify_manifest(config: IsolateConfig):
     manifest.save()
 
 
+def find_sdk_dir(tmpdir):
+    """
+    Find the SDK dir associated with MSIX Packaging Tool and copy it to tmpdir
+    We need to copy it because we don't have access to execute it in the original location
+    """
+    stdout = subprocess.check_output(["powershell.exe", "Get-AppxPackage", "-name", "Microsoft.MSIXPackagingTool"])
+
+    match = re.search(r"InstallLocation\s+:\s+(.*)", stdout.decode("utf-8"))
+    if match is None:
+        return None
+    original_sdk_dir = os.path.join(match.group(1).strip(), "SDK")
+    sdk_dir = os.path.join(tmpdir, "SDK")
+    shutil.copytree(original_sdk_dir, sdk_dir)
+    return sdk_dir
+
+
 def check_requirements(args):
     if platform.system() != "Windows":
         print("This script only works on Windows")
         exit(1)
 
-    if int(platform.version().split(".")[2]) < 25357:
-        print("WARNING! This script might not work on your Windows version. You need at least 10.0.25357")
-
-    try:
-        subprocess.call([args.signtool, "/?"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-    except FileNotFoundError:
-        print(f"{args.signtool} is not found, pass your signtool.exe path with --signtool")
+    if args.sdk_dir is None:
+        print("MSIX Packaging Tool is not installed, please either install it or pass your SDK directory with --sdk_dir")
         exit(1)
 
     try:
-        subprocess.call([args.makeappx, "/?"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        subprocess.call([os.path.join(args.sdk_dir, "signtool.exe"), "/?"],
+                        stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, shell=True)
     except FileNotFoundError:
-        print(f"{args.makeappx} is not found, pass your makeappx.exe path with --makeappx")
+        print(f"signtool.exe is not found in {args.sdk_dir}")
+        exit(1)
+
+    try:
+        subprocess.call([os.path.join(args.sdk_dir, "makeappx.exe"), "/?"],
+                        stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, shell=True)
+    except FileNotFoundError:
+        print(f"makeappx.exe is not found in {args.sdk_dir}")
         exit(1)
 
     for capability in args.capability:
@@ -145,24 +165,23 @@ def check_requirements(args):
 
 
 def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--output", "-o", default=None)
-    parser.add_argument("--cert", "-c", required=True)
-    parser.add_argument("--capability", "--cap", action="append", default=[])
-    parser.add_argument("--signtool", default="signtool.exe")
-    parser.add_argument("--makeappx", default="makeappx.exe")
-    parser.add_argument("msix")
-
-    args = parser.parse_args()
-
-    check_requirements(args)
-
     with tempfile.TemporaryDirectory() as tmpdir:
+        parser = argparse.ArgumentParser()
+        parser.add_argument("--output", "-o", default=None)
+        parser.add_argument("--cert", "-c", required=True)
+        parser.add_argument("--capability", "--cap", action="append", default=[])
+        parser.add_argument("--sdk_dir", default=find_sdk_dir(tmpdir))
+        parser.add_argument("msix")
+
+        args = parser.parse_args()
+
+        check_requirements(args)
+
         config = IsolateConfig(
             output=os.path.abspath(args.output),
             cert=args.cert,
-            signtool=args.signtool,
-            makeappx=args.makeappx,
+            signtool=os.path.join(args.sdk_dir, "signtool.exe"),
+            makeappx=os.path.join(args.sdk_dir, "makeappx.exe"),
             working_dir=os.path.abspath(tmpdir),
             msix=os.path.abspath(args.msix) if args.msix else None,
             capabilities=args.capability,
