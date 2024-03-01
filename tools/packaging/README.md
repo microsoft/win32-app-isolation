@@ -48,10 +48,8 @@ You can isolate your `msix` package using `isolate.py`.
 ### Requirement
 
 * Python3
-* makeappx.exe
-* signtool.exe
-* Windows version >= 25357
-* `.pfx` certification
+* [MSIX Packaging Tool](https://github.com/microsoft/win32-app-isolation/releases)
+* `.pfx` certification to sign your package
 
 ### Usage
 
@@ -59,8 +57,9 @@ You can isolate your `msix` package using `isolate.py`.
 python isolate.py --cert your_cert.pfx -o isolated.msix app.msix
 ```
 
-The command will try to use the `makeappx.exe` and `signtool.exe` in your enviroment. However, if they do not exist in `PATH`
-or you want to use a specific version of them, you can pass the executable you want to use by `--makeappx` and `--signtool`
+The command will try to use the `makeappx.exe` and `signtool.exe` from your MSIX Packaging Tool.
+If you want to use your own SDK version, use `--sdk_dir` to pass the directory that has the
+binaries.
 
 In order to add capabilities, use `--capability` or `--cap` like
 

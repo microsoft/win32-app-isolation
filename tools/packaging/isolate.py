@@ -167,7 +167,7 @@ def check_requirements(args):
 def main():
     with tempfile.TemporaryDirectory() as tmpdir:
         parser = argparse.ArgumentParser()
-        parser.add_argument("--output", "-o", default=None)
+        parser.add_argument("--output", "-o", default=None, required=True)
         parser.add_argument("--cert", "-c", required=True)
         parser.add_argument("--capability", "--cap", action="append", default=[])
         parser.add_argument("--sdk_dir", default=find_sdk_dir(tmpdir))

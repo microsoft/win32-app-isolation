@@ -94,7 +94,7 @@
     <PackageInformation
         PackageName="MyAppPackageName"
         PackageDisplayName="MyApp Display Name"
-        PublisherName="CN=Fabrikam Corporation, O=Fabrikam Corporation, L=Redmond, S=Washington, C=US"
+        PublisherName="CN=MyPublisher"
         PublisherDisplayName="MyPublisher Display Name"
         Version="1.1.0.0">
 
