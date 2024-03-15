@@ -81,6 +81,10 @@ on the size of the package.
     * In `<Application>` replace any existing entrypoint/trustlevel/runtimebehavior with
     `uap10:TrustLevel="appContainer" previewsecurity2:RuntimeBehavior="appSilo"`.
 
+    * In `<Application>` extensions, remove any `EntryPoints=*` or `Executable=*` as those are inherited from the parent `<Application>`
+
+    * Add `desktop7:Scope="user"` to the extension element for `windows.protocol`.
+
     * **Note**: By default, MPT will automatically add `<rescap:Capability name="runFullTrust">` to
     `<Capabilities>` due to the app being a packaged Win32. This should be removed unless
     the app has other manifested extensions which can affect the user global state, such as
@@ -109,6 +113,8 @@ on the size of the package.
 4. Save and close the manifest window. If there are any errors in the manifest, MPT will display
 them. Select Create/Save to generate the .msix file. This can take serveral minutes depending on 
 the size of the package
+
+    * If there are errors with the manifest, a more actionable error message can be found in Event Viewer under Application and Services/Microsoft/Windows/AppxPackagingOM/Microsoft-Windwos-AppxPackaging/Operational
 
 5. See [application capability profiler](../profiler/application-capability-profiler.md) for
 information on identifying capabilities that may need to be declared in the application package
