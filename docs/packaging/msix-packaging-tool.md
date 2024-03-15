@@ -114,7 +114,8 @@ on the size of the package.
 them. Select Create/Save to generate the .msix file. This can take serveral minutes depending on 
 the size of the package
 
-    * If there are errors with the manifest, a more actionable error message can be found in Event Viewer under Application and Services/Microsoft/Windows/AppxPackagingOM/Microsoft-Windwos-AppxPackaging/Operational
+    * If there are errors with the manifest, a more actionable error message can be found in Event 
+    Viewer under `Application and Services/Microsoft/Windows/AppxPackagingOM/Microsoft-Windows-AppxPackaging/Operational`
 
 5. See [application capability profiler](../profiler/application-capability-profiler.md) for
 information on identifying capabilities that may need to be declared in the application package
