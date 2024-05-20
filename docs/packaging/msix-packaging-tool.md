@@ -76,7 +76,7 @@ on the size of the package.
     * In `<Dependencies>` change `TargetDeviceFamily` to
     `<TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.25357.0" MaxVersionTested="10.0.25357.0" />`.
 
-        * **Note**: Not all features are available in the minimun build, check out the [release notes](../../relnotes/windows-release-notes.md) for more detailed information.
+        * **Note**: Not all features are available in the minimum build, check out the [release notes](../../relnotes/windows-release-notes.md) for more detailed information.
 
     * In `<Application>` replace any existing entrypoint/trustlevel/runtimebehavior with
     `uap10:TrustLevel="appContainer" previewsecurity2:RuntimeBehavior="appSilo"`.
