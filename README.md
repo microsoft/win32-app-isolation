@@ -6,7 +6,7 @@ and components that virtualize resources and provide brokered access to other re
 This repo contains the documentation and tools to help you isolate your applications.
 
 ## Getting started 
-* The first step to isolating your application is to package it to run isolated by following the instructions [here](docs/packaging/msix-packaging-tool.md). 
+* The first step to isolating your application is to package it to run isolated by following the instructions [here](docs/packagingWithVS/packaging-with-visual-studio.md). 
 * Once you have your application packaged, use [Application Capability Profiler](docs/profiler/application-capability-profiler.md) to update the application to grant it access to additional resources.
 * We also have additional documentation about the [fundamentals](docs/fundamentals) including file access consent.
 * You're now ready to deploy and run your application on Windows.
