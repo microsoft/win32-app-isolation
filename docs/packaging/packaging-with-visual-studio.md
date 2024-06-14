@@ -11,21 +11,21 @@ This page will cover everything needed to package an application into an isolate
 ## Step 1 - Install the required workloads in Visual Studio
 Open the Visual Studio Installer and click button to Modify an existing installation. On the Workloads tab check the "Windows application development" box for development in C# (and optionally check the "C++ WinUI app development tools" box for development in C++). The Windows 11 SDK 10.0.26100.0 (or greater) is also required.
 
-	![image](images/01-VisualStudio-Required-Workloads.png)
+![image](images/vs/01-VisualStudio-Required-Workloads.png)
 
 ## Step 2 - Create your app project
 In Visual Studio, create a new C# or C++ project using the template "Blank App, Packaged with Windows Application Packaging Project (WinUI 3 in Desktop)". Click "Create" and then select "10.0.26100.0" (or later) for Target Platform Version (TPV) and Target Platform Minimum Version (TPMinV). 
 
-	![image](images/02-Blank-App-Packaged-With-Windows-Application-Packaging-Project.png)
-	![image](images/03-New-Project.png)
-	![image](images/04-New-Windows-Project.png)
+![image](images/vs/02-Blank-App-Packaged-With-Windows-Application-Packaging-Project.png)
+![image](images/vs/03-New-Project.png)
+![image](images/vs/04-New-Windows-Project.png)
 
 ## Step 3 - Confirm using Microsoft.Windows.SDK.BuildTools version 10.0.26100.1 or later
 Go to Project -> "Manage NuGet Packages" to install Microsoft.Windows.SDK.BuildTools version 10.0.26100.1 (or later).
 
-	![image](images/05-Manage-NuGet-Packages.png)
-	![image](images/06-Microsoft-Windows-SDK-BuildTools.png)
-	![image](images/07-SDK-BuildTools-Info.png)
+![image](images/vs/05-Manage-NuGet-Packages.png)
+![image](images/vs/06-Microsoft-Windows-SDK-BuildTools.png)
+![image](images/vs/07-SDK-BuildTools-Info.png)
 
 ## Step 4 - Edit the Packaging.appxmanifest file
 In the manifest file, the following changes will need to be made:
@@ -59,22 +59,22 @@ if it's not there already.
 the app has other manifested extensions which can affect the user global state, such as
 `comServer` or `FirewallRules`, since those require the `runFullTrust` capability.
 
-	![image](images/08-Edit-Manifest-File.png)
-	![image](images/09-PackagingAppx-File.png)
+![image](images/vs/08-Edit-Manifest-File.png)
+![image](images/vs/09-PackagingAppx-File.png)
 
 ## Step 5 - Build solution
 Build the Visual Studio solution. 
 
-	![image](images/10-Build-Solution.png)
+![image](images/vs/10-Build-Solution.png)
 
 ## Step 6 - Publish App Packages
 Publish the App Package by using the "Create App Packages..." wizard.
 
-	![image](images/11-Create-App-Packages.png)
-	![image](images/12-Create-App-Packages-Create.png)
-	![image](images/13-Create-App-Packages-success.png)
+![image](images/vs/11-Create-App-Packages.png)
+![image](images/vs/12-Create-App-Packages-Create.png)
+![image](images/vs/13-Create-App-Packages-success.png)
 
 ## Step 7 - Install App
 Use Run the Install.ps1 with PowerShell to install the App.
 
-	![image](images/14-Install-App-Package.png)
+![image](images/vs/14-Install-App-Package.png)
