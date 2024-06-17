@@ -15,7 +15,7 @@ The *Windows 11 SDK 10.0.26100.0* (or greater) is also required.
 ## Step 2 - Create your app project
 In Visual Studio, create a new C# or C++ project using the template *Blank App, 
 Packaged with Windows Application Packaging Project (WinUI 3 in Desktop)*. 
-Click "Create" and then select "10.0.26100.0" (or later) for Target Platform Version (TPV) 
+Click *Create* and then select *10.0.26100.0* (or later) for Target Platform Version (TPV) 
 and Target Platform Minimum Version (TPMinV). 
 
 <img src="images/vs/02-Blank-App-Packaged-With-Windows-Application-Packaging-Project.png" alt="image" height="150"/>
