@@ -8,8 +8,8 @@ This repo contains the documentation and tools to help you isolate your applicat
 ## Getting started 
 * The first step to isolating your application is to package it to run isolated by following the instructions
 
-	*[using the MSIX packaing tool](docs/packaging/msix-packaging-tool.md)
-	*or [using Visual Studio](docs/packaging/packaging-with-visual-studio.md)
+	* [using the MSIX packaing tool](docs/packaging/msix-packaging-tool.md)
+	* or [using Visual Studio](docs/packaging/packaging-with-visual-studio.md)
 	
 * Once you have your application packaged, use [Application Capability Profiler](docs/profiler/application-capability-profiler.md) to update the application to grant it access to additional resources.
 * We also have additional documentation about the [fundamentals](docs/fundamentals) including file access consent.
