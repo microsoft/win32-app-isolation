@@ -24,8 +24,8 @@ and Target Platform Minimum Version (TPMinV).
 
 <img src="images/vs/04-New-Windows-Project.png" alt="image" height="150"/>
 
-## Step 3 - Set NuGet to use Microsoft.Windows.SDK.BuildTools version 10.0.26100.1 or later
-Go to *Project -> Manage NuGet Packages* to install Microsoft.Windows.SDK.BuildTools 
+## Step 3 - Install Microsoft.Windows.SDK.BuildTools version 10.0.26100.1 or later with NuGet
+Go to *Project -> Manage NuGet Packages* to install *Microsoft.Windows.SDK.BuildTools* 
 version 10.0.26100.1 (or later).
 
 <img src="images/vs/05-Manage-NuGet-Packages.png" alt="image" height="400"/>
@@ -73,12 +73,14 @@ Build the Visual Studio solution.
 
 <img src="images/vs/10-Build-Solution.png" alt="image" height="100"/>
 
-Publish the App Package by using the "Create App Packages..." wizard.
+Publish the App Package by using the *Create App Packages...* wizard.
 
 <img src="images/vs/11-Create-App-Packages.png" alt="image" height="200"/>
 
 <img src="images/vs/12-Create-App-Packages-Create.png" alt="image" height="500"/>
 
-After publishing the App Packages, the *Output location* displayed shows the root directory where the MSIX package is published by version. Open on the version folder to find the Install.ps1 file.
+After publishing the App Packages, the *Output location* displayed shows the root directory 
+where the MSIX package is published by version. 
+Open on the version folder to find the Install.ps1 file for installing the app.
 
 <img src="images/vs/13-Create-App-Packages-Success.png" alt="image" height="500"/>
