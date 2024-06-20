@@ -64,17 +64,26 @@ on the size of the package.
     **Note**: Isolated win32 applications are not compatible with other application types within the same package.
 
     * Add `xmlns:previewsecurity2="http://schemas.microsoft.com/appx/manifest/preview/windows10/security/2"`
-    to the `<Package>` element
+    to the `<Package>` element if it's not there already.
 
-    * Add `previewsecurity2` to `IgnorableNamespaces` at the end of the `<Package>` element
+        * Add `previewsecurity2` to `IgnorableNamespaces` at the end of the `<Package>` element.
+
+    * Add `xmlns:uap10="http://schemas.microsoft.com/appx/manifest/uap/windows10/10"` to the `<Package>` element
+    if it's not there already.
+
+        * Add `uap10` to `IgnorableNamespaces` at the end of the `<Package>` element.
 
     * In `<Dependencies>` change `TargetDeviceFamily` to
-    `<TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.25357.0" MaxVersionTested="10.0.25357.0" />`
+    `<TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.25357.0" MaxVersionTested="10.0.25357.0" />`.
 
         * **Note**: Not all features are available in the minimun build, check out the [release notes](../../relnotes/windows-release-notes.md) for more detailed information.
 
     * In `<Application>` replace any existing entrypoint/trustlevel/runtimebehavior with
-    `uap10:TrustLevel="appContainer" previewsecurity2:RuntimeBehavior="appSilo"`
+    `uap10:TrustLevel="appContainer" previewsecurity2:RuntimeBehavior="appSilo"`.
+
+    * In `<Application>` extensions, remove any `EntryPoints=*` or `Executable=*` as those are inherited from the parent `<Application>`
+
+    * Add `desktop7:Scope="user"` to the extension element for `windows.protocol`.
 
     * **Note**: By default, MPT will automatically add `<rescap:Capability name="runFullTrust">` to
     `<Capabilities>` due to the app being a packaged Win32. This should be removed unless
@@ -104,6 +113,9 @@ on the size of the package.
 4. Save and close the manifest window. If there are any errors in the manifest, MPT will display
 them. Select Create/Save to generate the .msix file. This can take serveral minutes depending on 
 the size of the package
+
+    * If there are errors with the manifest, a more actionable error message can be found in Event 
+    Viewer under `Application and Services/Microsoft/Windows/AppxPackagingOM/Microsoft-Windows-AppxPackaging/Operational`
 
 5. See [application capability profiler](../profiler/application-capability-profiler.md) for
 information on identifying capabilities that may need to be declared in the application package
