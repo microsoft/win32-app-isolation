@@ -3,21 +3,7 @@ Win32 app isolation is a new security feature on Windows that helps contain the 
 application compromise. 
 Win32 app isolation is built on the foundation of [AppContainers](https://learn.microsoft.com/en-us/windows/win32/secauthz/implementing-an-appcontainer), which offer a security boundary, 
 and components that virtualize resources and provide brokered access to other resources. 
-This repo contains the documentation and tools to help you isolate your applications.
-
-## Getting started 
-* The first step to isolating your application is to package it to run isolated by following the instructions
-
-	* [using the MSIX packaing tool](docs/packaging/msix-packaging-tool.md)
-	* or [using Visual Studio](docs/packaging/packaging-with-visual-studio.md)
-	
-* Once you have your application packaged, use [Application Capability Profiler](docs/profiler/application-capability-profiler.md) to update the application to grant it access to additional resources.
-* We also have additional documentation about the [fundamentals](docs/fundamentals) including file access consent.
-* You're now ready to deploy and run your application on Windows.
-
-Binaries for the tools used to package applications to run isolated are shared under the [releases](https://github.com/microsoft/win32-app-isolation/releases) section of the repo.
-
-Release notes for supported Windows builds and tools can be found [here](relnotes/windows-release-notes.md).
+This repo should be used only to file bugs or feature requests, and to ask questions. To learn more about the feature and how to enable it for your app, visit the main Win32 app isolation page at [MS Learn](https://learn.microsoft.com/en-us/windows/win32/secauthz/app-isolation-overview).
 
 ## Communicating with the team
 We'd love to hear your feedback and answer your questions! 
@@ -27,6 +13,7 @@ Please search for similar discussions and issues before creating new ones.
 
 ## Resources
 You can find additional information about Win32 app isolation using the following resources: 
+* [MS Learn](https://learn.microsoft.com/en-us/windows/win32/secauthz/app-isolation-overview)
 * [Win32 app isolation Build session](https://www.youtube.com/watch?v=w6VwHGPz12w&pp=ygUTd2luMzIgYXBwIGlzb2xhdGlvbg%3D%3D&ab_channel=MicrosoftDeveloper)
 * [Win32 app isolation blog](https://blogs.windows.com/windowsdeveloper/2023/06/14/public-preview-improve-win32-app-security-via-app-isolation/)
 
