@@ -5,6 +5,9 @@
     },
     {
       "pattern": "^https://.*microsoft.com/.*"
+    },
+    {
+      "pattern": "^https://blogs.windows.com/windowsdeveloper/2023/06/14/public-preview-improve-win32-app-security-via-app-isolation/$"
     }
   ]
 }
