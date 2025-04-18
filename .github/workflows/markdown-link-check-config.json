@@ -5,6 +5,9 @@
     },
     {
       "pattern": "^https://.*microsoft.com/.*"
+    },
+    {
+      "pattern": "^https://.*windows.com/.*"
     }
   ]
 }
